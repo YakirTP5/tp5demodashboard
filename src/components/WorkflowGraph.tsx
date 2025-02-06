@@ -3,8 +3,10 @@ import {
   Search, Filter, Clock, AlertTriangle, User,
   ChevronLeft, ChevronRight,
   Play as PlayIcon, Zap, ArrowRight, X,
-  ZoomIn, ZoomOut, Maximize2
+  ZoomIn, ZoomOut, Maximize2,
+  ChevronLeftCircle, ChevronRightCircle
 } from 'lucide-react';
+import AiInsightsPanel from './AiInsightsPanel';
 
 interface Session {
   id: string;
@@ -609,61 +611,7 @@ function WorkflowGraph() {
       </div>
 
       {/* AI Insights Panel */}
-      {selectedNode && (
-        <div className="w-80 bg-white border-l border-gray-200">
-          <div className="p-4 border-b border-gray-200">
-            <div className="flex items-center justify-between">
-              <h2 className="font-medium">AI Insights</h2>
-              <button
-                onClick={() => setSelectedNode(null)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-          </div>
-          <div className="p-4">
-            <div className="space-y-4">
-              <div>
-                <h3 className="font-medium">{selectedNode.label}</h3>
-                <div className="mt-2 space-y-2">
-                  <div className="flex items-center text-sm text-gray-500">
-                    <Clock className="h-4 w-4 mr-1" />
-                    Time Spent: {formatDuration(selectedNode.timeSpent)}
-                  </div>
-                  <div className="flex items-center text-sm text-gray-500">
-                    <Zap className="h-4 w-4 mr-1" />
-                    Efficiency: {selectedNode.efficiency}
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-indigo-50 p-3 rounded-lg">
-                <h4 className="text-sm font-medium text-indigo-900">AI Recommendation</h4>
-                <p className="mt-1 text-sm text-indigo-700">
-                  {selectedNode.aiRecommendation}
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <button
-                  onClick={() => console.log('Play video at:', selectedNode.videoTimestamp)}
-                  className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
-                >
-                  <PlayIcon className="h-4 w-4" />
-                  <span>Watch Session Video</span>
-                </button>
-                <button
-                  className="w-full flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50"
-                >
-                  <ArrowRight className="h-4 w-4" />
-                  <span>Compare with AI Workflow</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {selectedNode && <AiInsightsPanel />}
     </div>
   );
 }
