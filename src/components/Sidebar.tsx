@@ -1,9 +1,9 @@
 import React from 'react';
-import { LayoutDashboard, LineChart, Wand2, Users, Cable, ShieldCheck, Settings } from 'lucide-react';
+import { LayoutDashboard, LineChart, Wand2, Users, Cable, ShieldCheck, Settings, GitGraph } from 'lucide-react';
 
 interface SidebarProps {
-  currentView: 'dashboard' | 'analysis';
-  onViewChange: (view: 'dashboard' | 'analysis') => void;
+  currentView: 'dashboard' | 'analysis' | 'workflow';
+  onViewChange: (view: 'dashboard' | 'analysis' | 'workflow') => void;
   onCopilotToggle: () => void;
   showCopilot: boolean;
 }
@@ -40,6 +40,19 @@ function Sidebar({ currentView, onViewChange, onCopilotToggle, showCopilot }: Si
             >
               <LineChart className="h-5 w-5" />
               <span>Task Analysis</span>
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => onViewChange('workflow')}
+              className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors ${
+                currentView === 'workflow' 
+                  ? 'bg-indigo-50 text-indigo-600' 
+                  : 'text-gray-600 hover:bg-gray-50'
+              }`}
+            >
+              <GitGraph className="h-5 w-5" />
+              <span>Workflow Graph</span>
             </button>
           </li>
           <li>

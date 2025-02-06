@@ -6,10 +6,11 @@ import MainSection from './components/MainSection';
 import TaskAnalysis from './components/TaskAnalysis';
 import AiInsightsPanel from './components/AiInsightsPanel';
 import AiCopilot from './components/AiCopilot';
+import WorkflowGraph from './components/WorkflowGraph';
 import { AppProvider } from './context/AppContext';
 
 function App() {
-  const [currentView, setCurrentView] = useState<'dashboard' | 'analysis'>('dashboard');
+  const [currentView, setCurrentView] = useState<'dashboard' | 'analysis' | 'workflow'>('dashboard');
   const [showCopilot, setShowCopilot] = useState(false);
 
   return (
@@ -27,8 +28,10 @@ function App() {
               <TopSection />
               <MainSection />
             </div>
-          ) : (
+          ) : currentView === 'analysis' ? (
             <TaskAnalysis />
+          ) : (
+            <WorkflowGraph />
           )}
         </main>
         <AiInsightsPanel />
