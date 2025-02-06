@@ -4,9 +4,11 @@ import { LayoutDashboard, LineChart, Wand2, Users, Cable, ShieldCheck, Settings 
 interface SidebarProps {
   currentView: 'dashboard' | 'analysis';
   onViewChange: (view: 'dashboard' | 'analysis') => void;
+  onCopilotToggle: () => void;
+  showCopilot: boolean;
 }
 
-function Sidebar({ currentView, onViewChange }: SidebarProps) {
+function Sidebar({ currentView, onViewChange, onCopilotToggle, showCopilot }: SidebarProps) {
   return (
     <div className="w-64 bg-white border-r border-gray-200">
       <div className="h-16 flex items-center px-4 border-b border-gray-200">
@@ -41,7 +43,14 @@ function Sidebar({ currentView, onViewChange }: SidebarProps) {
             </button>
           </li>
           <li>
-            <button className="w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50">
+            <button 
+              onClick={onCopilotToggle}
+              className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors ${
+                showCopilot 
+                  ? 'bg-indigo-50 text-indigo-600' 
+                  : 'text-gray-600 hover:bg-gray-50'
+              }`}
+            >
               <Wand2 className="h-5 w-5" />
               <span>AI Assistant</span>
             </button>

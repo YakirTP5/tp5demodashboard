@@ -5,15 +5,22 @@ import TopSection from './components/TopSection';
 import MainSection from './components/MainSection';
 import TaskAnalysis from './components/TaskAnalysis';
 import AiInsightsPanel from './components/AiInsightsPanel';
+import AiCopilot from './components/AiCopilot';
 import { AppProvider } from './context/AppContext';
 
 function App() {
   const [currentView, setCurrentView] = useState<'dashboard' | 'analysis'>('dashboard');
+  const [showCopilot, setShowCopilot] = useState(false);
 
   return (
     <AppProvider>
       <div className="flex h-screen bg-gray-50">
-        <Sidebar onViewChange={setCurrentView} currentView={currentView} />
+        <Sidebar 
+          onViewChange={setCurrentView} 
+          currentView={currentView}
+          onCopilotToggle={() => setShowCopilot(prev => !prev)}
+          showCopilot={showCopilot}
+        />
         <main className="flex-1 overflow-auto">
           {currentView === 'dashboard' ? (
             <div className="container mx-auto px-6 py-8">
@@ -25,6 +32,7 @@ function App() {
           )}
         </main>
         <AiInsightsPanel />
+        {showCopilot && <AiCopilot />}
       </div>
     </AppProvider>
   );
