@@ -1,0 +1,76 @@
+{
+  "actions": [
+    {
+      "_id": "67a4e08095bd7c05a6d3f901",
+      "Action ID": "A-001",
+      "Step ID": "ST-001",
+      "Action Name": "Review Ticket Details",
+      "Type": "Manual",
+      "Tool": "JIRA",
+      "Status": "Completed",
+      "Order": 1,
+      "Duration (h)": "0.5",
+      "Description": "Read and understand ticket details"
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f902",
+      "Action ID": "A-002",
+      "Step ID": "ST-001",
+      "Action Name": "Categorize Issue",
+      "Type": "AI Assisted",
+      "Tool": "AI Categorizer",
+      "Status": "Completed",
+      "Order": 2,
+      "Duration (h)": "0.2",
+      "Description": "Use AI to categorize the issue type"
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f903",
+      "Action ID": "A-003",
+      "Step ID": "ST-002",
+      "Action Name": "Query Usage Data",
+      "Type": "Automated",
+      "Tool": "BigQuery",
+      "Status": "Completed",
+      "Order": 1,
+      "Duration (h)": "0.3",
+      "Description": "Extract customer usage data"
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f904",
+      "Action ID": "A-004",
+      "Step ID": "ST-002",
+      "Action Name": "Generate Analysis Report",
+      "Type": "AI Assisted",
+      "Tool": "Looker",
+      "Status": "Completed",
+      "Order": 2,
+      "Duration (h)": "0.8",
+      "Description": "Create analysis report with visualizations"
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f905",
+      "Action ID": "A-005",
+      "Step ID": "ST-003",
+      "Action Name": "Code Solution",
+      "Type": "Manual",
+      "Tool": "VS Code",
+      "Status": "In Progress",
+      "Order": 1,
+      "Duration (h)": "2.0",
+      "Description": "Implement technical solution"
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f906",
+      "Action ID": "A-006",
+      "Step ID": "ST-004",
+      "Action Name": "Draft Templates",
+      "Type": "AI Assisted",
+      "Tool": "GPT-4",
+      "Status": "Completed",
+      "Order": 1,
+      "Duration (h)": "1.5",
+      "Description": "Create initial response templates"
+    }
+  ]
+} 

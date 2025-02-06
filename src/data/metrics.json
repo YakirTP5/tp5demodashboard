@@ -1,0 +1,74 @@
+{
+  "metrics": {
+    "current": {
+      "ops_hours": {
+        "value": 2345,
+        "trend": 8.3,
+        "trend_direction": "down"
+      },
+      "analysis_time": {
+        "value": 45,
+        "trend": 12.5,
+        "trend_direction": "down"
+      },
+      "ops_cost": {
+        "value": 12500,
+        "trend": 15.4,
+        "trend_direction": "down"
+      },
+      "blunder_time": {
+        "value": 234,
+        "trend": 18.7,
+        "trend_direction": "down"
+      },
+      "automation": {
+        "value": 67,
+        "trend": 22.5,
+        "trend_direction": "up"
+      },
+      "high_severity": {
+        "value": 23,
+        "trend": 25.8,
+        "trend_direction": "down"
+      }
+    },
+    "historical": {
+      "ops_hours": {
+        "baseline": 2500,
+        "variance": 200,
+        "min": 2000,
+        "max": 2700
+      },
+      "analysis_time": {
+        "baseline": 50,
+        "variance": 5,
+        "min": 35,
+        "max": 55
+      },
+      "ops_cost": {
+        "baseline": 13500,
+        "variance": 1000,
+        "min": 11000,
+        "max": 14000
+      },
+      "blunder_time": {
+        "baseline": 280,
+        "variance": 30,
+        "min": 180,
+        "max": 280
+      },
+      "automation": {
+        "baseline": 60,
+        "variance": 8,
+        "min": 55,
+        "max": 85
+      },
+      "high_severity": {
+        "baseline": 28,
+        "variance": 5,
+        "min": 15,
+        "max": 30
+      }
+    }
+  }
+} 

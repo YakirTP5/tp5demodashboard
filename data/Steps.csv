@@ -1,0 +1,278 @@
+Step ID,Session ID,Step Name,Phase,Estimated Time (h),Step Cost ($)
+ST-001,S-001,Final Review,Final Sync,0.55,27.5
+ST-002,S-001,Anomaly Flagging,Data Extraction,0.57,28.33
+ST-003,S-001,Anomaly Flagging,Anomaly Detection,0.45,22.5
+ST-004,S-001,Final Review,Data Extraction,0.18,9.17
+ST-005,S-002,Data Correction,Data Extraction,0.43,21.67
+ST-006,S-002,Anomaly Flagging,Anomaly Detection,0.55,27.5
+ST-007,S-002,Data Correction,Final Sync,0.35,17.5
+ST-008,S-002,Log Extraction,Final Sync,0.68,34.17
+ST-009,S-002,Anomaly Flagging,Error Resolution,0.42,20.83
+ST-010,S-002,Data Correction,Data Extraction,0.68,34.17
+ST-011,S-002,Anomaly Flagging,Anomaly Detection,0.37,18.33
+ST-012,S-003,Anomaly Flagging,Anomaly Detection,0.72,35.83
+ST-013,S-003,Data Correction,Schema Validation,0.65,32.5
+ST-014,S-003,Anomaly Flagging,Data Extraction,0.55,27.5
+ST-015,S-003,Anomaly Flagging,Error Resolution,0.27,13.33
+ST-016,S-003,Anomaly Flagging,Data Extraction,0.68,34.17
+ST-017,S-004,Data Correction,Anomaly Detection,0.43,21.67
+ST-018,S-004,Anomaly Flagging,Error Resolution,0.35,17.5
+ST-019,S-004,Log Extraction,Schema Validation,0.57,28.33
+ST-020,S-004,Log Extraction,Final Sync,0.38,19.17
+ST-021,S-005,Data Correction,Data Extraction,0.6,30.0
+ST-022,S-005,Log Extraction,Schema Validation,0.5,25.0
+ST-023,S-005,Log Extraction,Data Extraction,0.47,23.33
+ST-024,S-005,Final Review,Data Extraction,0.63,31.67
+ST-025,S-006,Data Correction,Error Resolution,0.57,28.33
+ST-026,S-006,Data Correction,Anomaly Detection,0.18,9.17
+ST-027,S-006,Anomaly Flagging,Schema Validation,0.32,15.83
+ST-028,S-006,Final Review,Final Sync,0.65,32.5
+ST-029,S-007,Field Mapping Check,Anomaly Detection,0.33,16.67
+ST-030,S-007,Final Review,Final Sync,0.18,9.17
+ST-031,S-007,Log Extraction,Error Resolution,0.35,17.5
+ST-032,S-007,Anomaly Flagging,Error Resolution,0.45,22.5
+ST-033,S-007,Final Review,Anomaly Detection,0.6,30.0
+ST-034,S-007,Data Correction,Final Sync,0.35,17.5
+ST-035,S-007,Anomaly Flagging,Error Resolution,0.42,20.83
+ST-036,S-008,Log Extraction,Final Sync,0.63,31.67
+ST-037,S-008,Field Mapping Check,Data Extraction,0.27,13.33
+ST-038,S-008,Final Review,Error Resolution,0.52,25.83
+ST-039,S-008,Field Mapping Check,Final Sync,0.7,35.0
+ST-040,S-009,Data Correction,Anomaly Detection,0.23,11.67
+ST-041,S-009,Field Mapping Check,Anomaly Detection,0.25,12.5
+ST-042,S-009,Log Extraction,Data Extraction,0.17,8.33
+ST-043,S-009,Final Review,Error Resolution,0.22,10.83
+ST-044,S-009,Anomaly Flagging,Anomaly Detection,0.38,19.17
+ST-045,S-010,Data Correction,Anomaly Detection,0.6,30.0
+ST-046,S-010,Field Mapping Check,Schema Validation,0.4,20.0
+ST-047,S-010,Final Review,Data Extraction,0.48,24.17
+ST-048,S-010,Anomaly Flagging,Error Resolution,0.73,36.67
+ST-049,S-011,Field Mapping Check,Schema Validation,0.6,30.0
+ST-050,S-011,Data Correction,Anomaly Detection,0.75,37.5
+ST-051,S-011,Log Extraction,Data Extraction,0.6,30.0
+ST-052,S-011,Anomaly Flagging,Schema Validation,0.48,24.17
+ST-053,S-011,Anomaly Flagging,Data Extraction,0.63,31.67
+ST-054,S-011,Field Mapping Check,Schema Validation,0.65,32.5
+ST-055,S-011,Final Review,Error Resolution,0.2,10.0
+ST-056,S-012,Data Correction,Anomaly Detection,0.75,37.5
+ST-057,S-012,Log Extraction,Schema Validation,0.73,36.67
+ST-058,S-012,Anomaly Flagging,Error Resolution,0.27,13.33
+ST-059,S-012,Final Review,Error Resolution,0.48,24.17
+ST-060,S-012,Log Extraction,Final Sync,0.18,9.17
+ST-061,S-012,Final Review,Error Resolution,0.7,35.0
+ST-062,S-013,Data Correction,Anomaly Detection,0.27,13.33
+ST-063,S-013,Log Extraction,Data Extraction,0.6,30.0
+ST-064,S-013,Data Correction,Data Extraction,0.7,35.0
+ST-065,S-013,Data Correction,Final Sync,0.3,15.0
+ST-066,S-013,Field Mapping Check,Final Sync,0.7,35.0
+ST-067,S-014,Anomaly Flagging,Anomaly Detection,0.72,35.83
+ST-068,S-014,Anomaly Flagging,Data Extraction,0.53,26.67
+ST-069,S-014,Final Review,Final Sync,0.57,28.33
+ST-070,S-014,Log Extraction,Final Sync,0.22,10.83
+ST-071,S-014,Log Extraction,Error Resolution,0.3,15.0
+ST-072,S-014,Field Mapping Check,Schema Validation,0.23,11.67
+ST-073,S-014,Log Extraction,Error Resolution,0.33,16.67
+ST-074,S-015,Anomaly Flagging,Error Resolution,0.72,35.83
+ST-075,S-015,Anomaly Flagging,Schema Validation,0.47,23.33
+ST-076,S-015,Field Mapping Check,Data Extraction,0.6,30.0
+ST-077,S-015,Field Mapping Check,Data Extraction,0.57,28.33
+ST-078,S-015,Log Extraction,Data Extraction,0.2,10.0
+ST-079,S-015,Log Extraction,Data Extraction,0.17,8.33
+ST-080,S-015,Anomaly Flagging,Schema Validation,0.45,22.5
+ST-081,S-016,Final Review,Schema Validation,0.73,36.67
+ST-082,S-016,Log Extraction,Anomaly Detection,0.72,35.83
+ST-083,S-016,Anomaly Flagging,Data Extraction,0.37,18.33
+ST-084,S-016,Final Review,Data Extraction,0.67,33.33
+ST-085,S-016,Log Extraction,Schema Validation,0.42,20.83
+ST-086,S-017,Data Correction,Final Sync,0.33,16.67
+ST-087,S-017,Field Mapping Check,Anomaly Detection,0.75,37.5
+ST-088,S-017,Final Review,Schema Validation,0.63,31.67
+ST-089,S-017,Anomaly Flagging,Error Resolution,0.27,13.33
+ST-090,S-017,Final Review,Error Resolution,0.75,37.5
+ST-091,S-018,Data Correction,Final Sync,0.23,11.67
+ST-092,S-018,Field Mapping Check,Error Resolution,0.42,20.83
+ST-093,S-018,Data Correction,Data Extraction,0.55,27.5
+ST-094,S-018,Log Extraction,Final Sync,0.58,29.17
+ST-095,S-018,Data Correction,Data Extraction,0.27,13.33
+ST-096,S-018,Anomaly Flagging,Final Sync,0.22,10.83
+ST-097,S-018,Data Correction,Schema Validation,0.27,13.33
+ST-098,S-019,Final Review,Error Resolution,0.33,16.67
+ST-099,S-019,Data Correction,Final Sync,0.55,27.5
+ST-100,S-019,Final Review,Schema Validation,0.18,9.17
+ST-101,S-019,Data Correction,Data Extraction,0.48,24.17
+ST-102,S-019,Log Extraction,Final Sync,0.2,10.0
+ST-103,S-019,Log Extraction,Error Resolution,0.75,37.5
+ST-104,S-020,Data Correction,Error Resolution,0.65,32.5
+ST-105,S-020,Anomaly Flagging,Error Resolution,0.58,29.17
+ST-106,S-020,Anomaly Flagging,Data Extraction,0.48,24.17
+ST-107,S-020,Field Mapping Check,Data Extraction,0.3,15.0
+ST-108,S-020,Anomaly Flagging,Anomaly Detection,0.48,24.17
+ST-109,S-020,Log Extraction,Error Resolution,0.23,11.67
+ST-110,S-020,Final Review,Final Sync,0.73,36.67
+ST-111,S-021,Final Review,Schema Validation,0.2,10.0
+ST-112,S-021,Final Review,Data Extraction,0.48,24.17
+ST-113,S-021,Log Extraction,Data Extraction,0.58,29.17
+ST-114,S-021,Anomaly Flagging,Final Sync,0.27,13.33
+ST-115,S-021,Data Correction,Final Sync,0.65,32.5
+ST-116,S-022,Log Extraction,Final Sync,0.58,29.17
+ST-117,S-022,Final Review,Schema Validation,0.38,19.17
+ST-118,S-022,Anomaly Flagging,Anomaly Detection,0.3,15.0
+ST-119,S-022,Anomaly Flagging,Error Resolution,0.35,17.5
+ST-120,S-022,Final Review,Final Sync,0.47,23.33
+ST-121,S-022,Final Review,Final Sync,0.18,9.17
+ST-122,S-023,Data Correction,Error Resolution,0.35,17.5
+ST-123,S-023,Log Extraction,Final Sync,0.32,15.83
+ST-124,S-023,Anomaly Flagging,Error Resolution,0.32,15.83
+ST-125,S-023,Anomaly Flagging,Data Extraction,0.28,14.17
+ST-126,S-024,Data Correction,Error Resolution,0.42,20.83
+ST-127,S-024,Field Mapping Check,Error Resolution,0.43,21.67
+ST-128,S-024,Log Extraction,Schema Validation,0.23,11.67
+ST-129,S-024,Field Mapping Check,Anomaly Detection,0.4,20.0
+ST-130,S-024,Log Extraction,Error Resolution,0.63,31.67
+ST-131,S-024,Field Mapping Check,Anomaly Detection,0.17,8.33
+ST-132,S-024,Data Correction,Anomaly Detection,0.17,8.33
+ST-133,S-025,Anomaly Flagging,Error Resolution,0.45,22.5
+ST-134,S-025,Data Correction,Anomaly Detection,0.25,12.5
+ST-135,S-025,Field Mapping Check,Anomaly Detection,0.7,35.0
+ST-136,S-025,Log Extraction,Final Sync,0.32,15.83
+ST-137,S-026,Data Correction,Data Extraction,0.62,30.83
+ST-138,S-026,Final Review,Anomaly Detection,0.52,25.83
+ST-139,S-026,Data Correction,Anomaly Detection,0.48,24.17
+ST-140,S-026,Final Review,Anomaly Detection,0.67,33.33
+ST-141,S-026,Log Extraction,Final Sync,0.18,9.17
+ST-142,S-026,Data Correction,Error Resolution,0.62,30.83
+ST-143,S-027,Field Mapping Check,Final Sync,0.33,16.67
+ST-144,S-027,Log Extraction,Anomaly Detection,0.48,24.17
+ST-145,S-027,Data Correction,Schema Validation,0.33,16.67
+ST-146,S-027,Final Review,Anomaly Detection,0.23,11.67
+ST-147,S-027,Field Mapping Check,Error Resolution,0.45,22.5
+ST-148,S-028,Data Correction,Anomaly Detection,0.37,18.33
+ST-149,S-028,Field Mapping Check,Error Resolution,0.52,25.83
+ST-150,S-028,Anomaly Flagging,Anomaly Detection,0.38,19.17
+ST-151,S-028,Data Correction,Anomaly Detection,0.28,14.17
+ST-152,S-029,Log Extraction,Anomaly Detection,0.43,21.67
+ST-153,S-029,Field Mapping Check,Schema Validation,0.4,20.0
+ST-154,S-029,Anomaly Flagging,Schema Validation,0.23,11.67
+ST-155,S-029,Field Mapping Check,Data Extraction,0.52,25.83
+ST-156,S-029,Data Correction,Data Extraction,0.32,15.83
+ST-157,S-030,Log Extraction,Data Extraction,0.7,35.0
+ST-158,S-030,Data Correction,Final Sync,0.42,20.83
+ST-159,S-030,Field Mapping Check,Error Resolution,0.2,10.0
+ST-160,S-030,Field Mapping Check,Error Resolution,0.2,10.0
+ST-161,S-030,Final Review,Data Extraction,0.35,17.5
+ST-162,S-030,Final Review,Anomaly Detection,0.27,13.33
+ST-163,S-031,Final Review,Final Sync,0.62,30.83
+ST-164,S-031,Anomaly Flagging,Error Resolution,0.55,27.5
+ST-165,S-031,Log Extraction,Final Sync,0.3,15.0
+ST-166,S-031,Log Extraction,Final Sync,0.48,24.17
+ST-167,S-031,Final Review,Error Resolution,0.25,12.5
+ST-168,S-031,Data Correction,Anomaly Detection,0.35,17.5
+ST-169,S-031,Final Review,Error Resolution,0.4,20.0
+ST-170,S-032,Data Correction,Data Extraction,0.63,31.67
+ST-171,S-032,Final Review,Error Resolution,0.48,24.17
+ST-172,S-032,Anomaly Flagging,Final Sync,0.58,29.17
+ST-173,S-032,Log Extraction,Anomaly Detection,0.28,14.17
+ST-174,S-032,Data Correction,Error Resolution,0.23,11.67
+ST-175,S-033,Anomaly Flagging,Error Resolution,0.67,33.33
+ST-176,S-033,Data Correction,Data Extraction,0.62,30.83
+ST-177,S-033,Data Correction,Final Sync,0.17,8.33
+ST-178,S-033,Data Correction,Final Sync,0.22,10.83
+ST-179,S-033,Final Review,Data Extraction,0.43,21.67
+ST-180,S-033,Data Correction,Schema Validation,0.45,22.5
+ST-181,S-033,Log Extraction,Error Resolution,0.2,10.0
+ST-182,S-034,Data Correction,Schema Validation,0.73,36.67
+ST-183,S-034,Field Mapping Check,Anomaly Detection,0.72,35.83
+ST-184,S-034,Data Correction,Anomaly Detection,0.62,30.83
+ST-185,S-034,Field Mapping Check,Schema Validation,0.62,30.83
+ST-186,S-034,Anomaly Flagging,Final Sync,0.27,13.33
+ST-187,S-034,Field Mapping Check,Data Extraction,0.73,36.67
+ST-188,S-035,Field Mapping Check,Anomaly Detection,0.75,37.5
+ST-189,S-035,Log Extraction,Error Resolution,0.23,11.67
+ST-190,S-035,Field Mapping Check,Error Resolution,0.75,37.5
+ST-191,S-035,Data Correction,Schema Validation,0.68,34.17
+ST-192,S-035,Data Correction,Anomaly Detection,0.28,14.17
+ST-193,S-035,Anomaly Flagging,Schema Validation,0.33,16.67
+ST-194,S-035,Field Mapping Check,Final Sync,0.63,31.67
+ST-195,S-036,Field Mapping Check,Final Sync,0.48,24.17
+ST-196,S-036,Anomaly Flagging,Anomaly Detection,0.32,15.83
+ST-197,S-036,Data Correction,Anomaly Detection,0.58,29.17
+ST-198,S-036,Final Review,Final Sync,0.65,32.5
+ST-199,S-036,Field Mapping Check,Schema Validation,0.37,18.33
+ST-200,S-037,Final Review,Schema Validation,0.67,33.33
+ST-201,S-037,Final Review,Data Extraction,0.58,29.17
+ST-202,S-037,Field Mapping Check,Final Sync,0.33,16.67
+ST-203,S-037,Field Mapping Check,Anomaly Detection,0.32,15.83
+ST-204,S-037,Final Review,Data Extraction,0.7,35.0
+ST-205,S-037,Data Correction,Anomaly Detection,0.62,30.83
+ST-206,S-038,Anomaly Flagging,Final Sync,0.75,37.5
+ST-207,S-038,Anomaly Flagging,Schema Validation,0.75,37.5
+ST-208,S-038,Anomaly Flagging,Schema Validation,0.33,16.67
+ST-209,S-038,Data Correction,Anomaly Detection,0.73,36.67
+ST-210,S-038,Final Review,Schema Validation,0.7,35.0
+ST-211,S-038,Final Review,Anomaly Detection,0.57,28.33
+ST-212,S-038,Anomaly Flagging,Error Resolution,0.42,20.83
+ST-213,S-039,Data Correction,Anomaly Detection,0.17,8.33
+ST-214,S-039,Log Extraction,Final Sync,0.57,28.33
+ST-215,S-039,Log Extraction,Schema Validation,0.7,35.0
+ST-216,S-039,Final Review,Anomaly Detection,0.68,34.17
+ST-217,S-040,Field Mapping Check,Anomaly Detection,0.32,15.83
+ST-218,S-040,Data Correction,Error Resolution,0.57,28.33
+ST-219,S-040,Anomaly Flagging,Anomaly Detection,0.22,10.83
+ST-220,S-040,Anomaly Flagging,Final Sync,0.2,10.0
+ST-221,S-041,Log Extraction,Anomaly Detection,0.28,14.17
+ST-222,S-041,Field Mapping Check,Error Resolution,0.3,15.0
+ST-223,S-041,Data Correction,Final Sync,0.75,37.5
+ST-224,S-041,Field Mapping Check,Schema Validation,0.23,11.67
+ST-225,S-041,Data Correction,Final Sync,0.17,8.33
+ST-226,S-041,Field Mapping Check,Error Resolution,0.18,9.17
+ST-227,S-042,Log Extraction,Schema Validation,0.55,27.5
+ST-228,S-042,Field Mapping Check,Schema Validation,0.73,36.67
+ST-229,S-042,Field Mapping Check,Final Sync,0.53,26.67
+ST-230,S-042,Field Mapping Check,Anomaly Detection,0.32,15.83
+ST-231,S-042,Log Extraction,Final Sync,0.5,25.0
+ST-232,S-042,Anomaly Flagging,Error Resolution,0.62,30.83
+ST-233,S-043,Log Extraction,Data Extraction,0.33,16.67
+ST-234,S-043,Log Extraction,Error Resolution,0.65,32.5
+ST-235,S-043,Data Correction,Error Resolution,0.32,15.83
+ST-236,S-043,Field Mapping Check,Anomaly Detection,0.57,28.33
+ST-237,S-043,Data Correction,Schema Validation,0.6,30.0
+ST-238,S-043,Log Extraction,Error Resolution,0.42,20.83
+ST-239,S-044,Final Review,Schema Validation,0.6,30.0
+ST-240,S-044,Data Correction,Anomaly Detection,0.55,27.5
+ST-241,S-044,Anomaly Flagging,Schema Validation,0.73,36.67
+ST-242,S-044,Data Correction,Data Extraction,0.3,15.0
+ST-243,S-044,Anomaly Flagging,Error Resolution,0.53,26.67
+ST-244,S-044,Log Extraction,Anomaly Detection,0.73,36.67
+ST-245,S-045,Field Mapping Check,Data Extraction,0.45,22.5
+ST-246,S-045,Final Review,Data Extraction,0.72,35.83
+ST-247,S-045,Field Mapping Check,Error Resolution,0.32,15.83
+ST-248,S-045,Log Extraction,Schema Validation,0.62,30.83
+ST-249,S-045,Field Mapping Check,Data Extraction,0.47,23.33
+ST-250,S-045,Log Extraction,Data Extraction,0.38,19.17
+ST-251,S-046,Log Extraction,Schema Validation,0.65,32.5
+ST-252,S-046,Final Review,Anomaly Detection,0.47,23.33
+ST-253,S-046,Data Correction,Anomaly Detection,0.48,24.17
+ST-254,S-046,Field Mapping Check,Data Extraction,0.33,16.67
+ST-255,S-046,Anomaly Flagging,Schema Validation,0.22,10.83
+ST-256,S-046,Log Extraction,Data Extraction,0.27,13.33
+ST-257,S-047,Data Correction,Schema Validation,0.33,16.67
+ST-258,S-047,Data Correction,Anomaly Detection,0.5,25.0
+ST-259,S-047,Field Mapping Check,Data Extraction,0.42,20.83
+ST-260,S-047,Log Extraction,Data Extraction,0.43,21.67
+ST-261,S-048,Log Extraction,Anomaly Detection,0.3,15.0
+ST-262,S-048,Field Mapping Check,Anomaly Detection,0.68,34.17
+ST-263,S-048,Anomaly Flagging,Anomaly Detection,0.28,14.17
+ST-264,S-048,Final Review,Anomaly Detection,0.75,37.5
+ST-265,S-049,Field Mapping Check,Error Resolution,0.32,15.83
+ST-266,S-049,Final Review,Data Extraction,0.2,10.0
+ST-267,S-049,Final Review,Final Sync,0.17,8.33
+ST-268,S-049,Anomaly Flagging,Schema Validation,0.37,18.33
+ST-269,S-049,Data Correction,Error Resolution,0.4,20.0
+ST-270,S-049,Anomaly Flagging,Error Resolution,0.42,20.83
+ST-271,S-049,Final Review,Error Resolution,0.45,22.5
+ST-272,S-050,Final Review,Anomaly Detection,0.55,27.5
+ST-273,S-050,Anomaly Flagging,Anomaly Detection,0.37,18.33
+ST-274,S-050,Anomaly Flagging,Schema Validation,0.63,31.67
+ST-275,S-050,Log Extraction,Final Sync,0.58,29.17
+ST-276,S-050,Anomaly Flagging,Data Extraction,0.43,21.67
+ST-277,S-050,Log Extraction,Anomaly Detection,0.42,20.83

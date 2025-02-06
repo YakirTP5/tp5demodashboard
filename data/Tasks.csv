@@ -1,0 +1,6 @@
+Task ID,Task Name,Total Time Spent (h),Ops Cost ($),Automation Score (%),Blunder Time (h),Blunder Cost ($)
+TSK-001,Data Quality Validation,768,38400,56,88,4389
+TSK-002,Ad Click & Impression Tracking,746,37300,51,91,4842
+TSK-003,Revenue Attribution Checks,1082,54100,43,55,3611
+TSK-004,Campaign Performance Auditing,1104,55200,77,100,4558
+TSK-005,User Behavior Data Cleanup,1111,55550,62,78,3618

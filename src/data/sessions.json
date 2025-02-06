@@ -1,0 +1,89 @@
+{
+  "sessions": [
+    {
+      "_id": "67a4e08095bd7c05a6d3f706",
+      "Session ID": "S-001",
+      "Workflow ID": "WF-001",
+      "Start Time": "2024-03-15T08:30:00Z",
+      "End Time": "2024-03-15T10:30:00Z",
+      "Duration (h)": "2.0",
+      "Cost ($)": "100.00",
+      "tools_used": ["JIRA", "Slack"],
+      "tags": ["Automation", "Customer Facing"],
+      "automation_metrics": {
+        "automation_score": 75,
+        "manual_steps": 25,
+        "automated_steps": 75,
+        "ai_assisted_steps": 45
+      }
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f707",
+      "Session ID": "S-002",
+      "Workflow ID": "WF-002",
+      "Start Time": "2024-03-16T13:20:00Z",
+      "End Time": "2024-03-16T14:20:00Z",
+      "Duration (h)": "1.0",
+      "Cost ($)": "50.00",
+      "tools_used": ["GPT-4", "Slack"],
+      "tags": ["Automation", "AI", "Customer Facing"],
+      "automation_metrics": {
+        "automation_score": 90,
+        "manual_steps": 10,
+        "automated_steps": 90,
+        "ai_assisted_steps": 80
+      }
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f708",
+      "Session ID": "S-003",
+      "Workflow ID": "WF-003",
+      "Start Time": "2024-03-14T08:15:00Z",
+      "End Time": "2024-03-14T09:15:00Z",
+      "Duration (h)": "1.0",
+      "Cost ($)": "50.00",
+      "tools_used": ["BigQuery", "Looker"],
+      "tags": ["Data Analysis", "Business"],
+      "automation_metrics": {
+        "automation_score": 80,
+        "manual_steps": 20,
+        "automated_steps": 80,
+        "ai_assisted_steps": 35
+      }
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f709",
+      "Session ID": "S-004",
+      "Workflow ID": "WF-004",
+      "Start Time": "2024-03-15T15:45:00Z",
+      "End Time": "2024-03-15T16:45:00Z",
+      "Duration (h)": "1.0",
+      "Cost ($)": "50.00",
+      "tools_used": ["Excel", "Looker"],
+      "tags": ["Data Analysis", "Business", "Internal"],
+      "automation_metrics": {
+        "automation_score": 70,
+        "manual_steps": 30,
+        "automated_steps": 70,
+        "ai_assisted_steps": 25
+      }
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f70a",
+      "Session ID": "S-005",
+      "Workflow ID": "WF-005",
+      "Start Time": "2024-03-16T10:30:00Z",
+      "End Time": "2024-03-16T11:30:00Z",
+      "Duration (h)": "1.0",
+      "Cost ($)": "50.00",
+      "tools_used": ["JIRA", "VS Code"],
+      "tags": ["Technical", "Documentation"],
+      "automation_metrics": {
+        "automation_score": 60,
+        "manual_steps": 40,
+        "automated_steps": 60,
+        "ai_assisted_steps": 30
+      }
+    }
+  ]
+} 

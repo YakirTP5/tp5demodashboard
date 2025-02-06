@@ -1,0 +1,11 @@
+Workflow ID,Task ID,Workflow Name,Total Time Spent (h),Ops Cost ($),Automation Score (%),Blunder Time (h),Blunder Cost ($)
+WF-001,TSK-001,CTR (Click-Through Rate) Validation,277,13850,53,20,3827
+WF-002,TSK-001,Revenue vs Cost Matching,258,12900,60,40,3611
+WF-003,TSK-002,CTR (Click-Through Rate) Validation,435,21750,58,47,3076
+WF-004,TSK-002,Revenue vs Cost Matching,180,9000,67,36,3657
+WF-005,TSK-003,CTR (Click-Through Rate) Validation,194,9700,68,22,3016
+WF-006,TSK-003,Revenue vs Cost Matching,350,17500,56,26,3808
+WF-007,TSK-004,CTR (Click-Through Rate) Validation,178,8900,63,49,2259
+WF-008,TSK-004,Revenue vs Cost Matching,376,18800,77,15,2699
+WF-009,TSK-005,CTR (Click-Through Rate) Validation,301,15050,67,13,1375
+WF-010,TSK-005,Revenue vs Cost Matching,458,22900,76,45,3999

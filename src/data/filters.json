@@ -1,0 +1,101 @@
+{
+  "filters": {
+    "time_range": {
+      "name": "Last X Days",
+      "icon": "Calendar",
+      "default": "Last 30 days",
+      "options": [
+        "Last 7 days",
+        "Last 30 days",
+        "Last 90 days"
+      ]
+    },
+    "communication": {
+      "name": "Channel",
+      "icon": "MessageSquare",
+      "options": [
+        "Ticket",
+        "Email",
+        "Chat",
+        "Internal Note"
+      ]
+    },
+    "category": {
+      "name": "Category",
+      "icon": "Tag",
+      "options": [
+        "Support",
+        "Feature Request",
+        "Bug",
+        "Documentation",
+        "Enhancement"
+      ]
+    },
+    "priority": {
+      "name": "Priority",
+      "icon": "AlertTriangle",
+      "options": [
+        "High",
+        "Medium",
+        "Low",
+        "Critical"
+      ]
+    },
+    "status": {
+      "name": "Status",
+      "icon": "Activity",
+      "options": [
+        "In Progress",
+        "Completed",
+        "Failed",
+        "Pending",
+        "On Hold"
+      ]
+    },
+    "apps": {
+      "name": "Apps",
+      "icon": "AppWindow",
+      "options": [
+        "JIRA",
+        "Slack",
+        "BigQuery",
+        "Datadog",
+        "Grafana",
+        "Looker",
+        "Excel",
+        "VS Code",
+        "GPT-4"
+      ]
+    },
+    "tags": {
+      "name": "Tags",
+      "icon": "Hash",
+      "options": [
+        "Automation",
+        "Manual Process",
+        "Data Analysis",
+        "Customer Facing",
+        "Internal",
+        "Technical",
+        "Business",
+        "Urgent",
+        "Scheduled"
+      ]
+    }
+  },
+  "defaults": {
+    "time_range": "Last 30 days"
+  },
+  "dynamic_filters": {
+    "task": {
+      "name": "Task",
+      "icon": "ClipboardList"
+    },
+    "search": {
+      "name": "Search",
+      "icon": "Search",
+      "type": "text",
+      "placeholder": "Search tasks, workflows..."
+    }
+  }
+} 

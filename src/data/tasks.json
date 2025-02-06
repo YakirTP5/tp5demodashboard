@@ -1,0 +1,94 @@
+{
+  "tasks": [
+    {
+      "_id": "67a4e08095bd7c05a6d3f6fc",
+      "Task ID": "T-001",
+      "Task Name": "Customer Support Workflow Optimization",
+      "Total Time Spent (h)": "45.5",
+      "Ops Cost ($)": "2275.00",
+      "Automation Score (%)": "65",
+      "Blunder Time (h)": "8.2",
+      "Blunder Cost ($)": "410.00",
+      "tags": ["Automation", "Customer Facing", "Process Improvement"],
+      "apps": ["JIRA", "Slack", "GPT-4"],
+      "automation_breakdown": {
+        "manual_steps": 35,
+        "automated_steps": 65,
+        "potential_automation": 85,
+        "ai_assisted_steps": 45
+      }
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f6fd",
+      "Task ID": "T-002",
+      "Task Name": "Sales Pipeline Analysis",
+      "Total Time Spent (h)": "38.2",
+      "Ops Cost ($)": "1910.00",
+      "Automation Score (%)": "72",
+      "Blunder Time (h)": "5.5",
+      "Blunder Cost ($)": "275.00",
+      "tags": ["Data Analysis", "Business", "Internal"],
+      "apps": ["BigQuery", "Looker", "Excel"],
+      "automation_breakdown": {
+        "manual_steps": 28,
+        "automated_steps": 72,
+        "potential_automation": 80,
+        "ai_assisted_steps": 35
+      }
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f6fe",
+      "Task ID": "T-003",
+      "Task Name": "Product Development Review",
+      "Total Time Spent (h)": "52.8",
+      "Ops Cost ($)": "2640.00",
+      "Automation Score (%)": "58",
+      "Blunder Time (h)": "12.3",
+      "Blunder Cost ($)": "615.00",
+      "tags": ["Technical", "Documentation", "Process Improvement"],
+      "apps": ["JIRA", "VS Code", "GPT-4"],
+      "automation_breakdown": {
+        "manual_steps": 42,
+        "automated_steps": 58,
+        "potential_automation": 75,
+        "ai_assisted_steps": 40
+      }
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f6ff",
+      "Task ID": "T-004",
+      "Task Name": "Marketing Campaign Analysis",
+      "Total Time Spent (h)": "31.5",
+      "Ops Cost ($)": "1575.00",
+      "Automation Score (%)": "78",
+      "Blunder Time (h)": "4.2",
+      "Blunder Cost ($)": "210.00",
+      "tags": ["Data Analysis", "Business", "Customer Facing"],
+      "apps": ["BigQuery", "Looker", "Excel"],
+      "automation_breakdown": {
+        "manual_steps": 22,
+        "automated_steps": 78,
+        "potential_automation": 90,
+        "ai_assisted_steps": 55
+      }
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f700",
+      "Task ID": "T-005",
+      "Task Name": "Financial Report Generation",
+      "Total Time Spent (h)": "42.3",
+      "Ops Cost ($)": "2115.00",
+      "Automation Score (%)": "82",
+      "Blunder Time (h)": "3.8",
+      "Blunder Cost ($)": "190.00",
+      "tags": ["Automation", "Business", "Scheduled"],
+      "apps": ["BigQuery", "Excel", "GPT-4"],
+      "automation_breakdown": {
+        "manual_steps": 18,
+        "automated_steps": 82,
+        "potential_automation": 95,
+        "ai_assisted_steps": 60
+      }
+    }
+  ]
+} 

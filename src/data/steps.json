@@ -1,0 +1,70 @@
+{
+  "steps": [
+    {
+      "_id": "67a4e08095bd7c05a6d3f801",
+      "Step ID": "ST-001",
+      "Workflow ID": "WF-001",
+      "Step Name": "Initial Ticket Review",
+      "Responsible": "Support Agent",
+      "Estimated Time (h)": "1.5",
+      "Status": "Completed",
+      "Order": 1,
+      "Description": "Review incoming support ticket and categorize issue"
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f802",
+      "Step ID": "ST-002",
+      "Workflow ID": "WF-001",
+      "Step Name": "Data Analysis",
+      "Responsible": "Data Analyst",
+      "Estimated Time (h)": "2.0",
+      "Status": "Completed",
+      "Order": 2,
+      "Description": "Analyze customer data and usage patterns"
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f803",
+      "Step ID": "ST-003",
+      "Workflow ID": "WF-001",
+      "Step Name": "Solution Development",
+      "Responsible": "Technical Lead",
+      "Estimated Time (h)": "3.0",
+      "Status": "In Progress",
+      "Order": 3,
+      "Description": "Develop technical solution for the issue"
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f804",
+      "Step ID": "ST-004",
+      "Workflow ID": "WF-002",
+      "Step Name": "Response Template Creation",
+      "Responsible": "Content Writer",
+      "Estimated Time (h)": "2.5",
+      "Status": "Completed",
+      "Order": 1,
+      "Description": "Create response templates for common scenarios"
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f805",
+      "Step ID": "ST-005",
+      "Workflow ID": "WF-002",
+      "Step Name": "AI Model Training",
+      "Responsible": "ML Engineer",
+      "Estimated Time (h)": "4.0",
+      "Status": "In Progress",
+      "Order": 2,
+      "Description": "Train AI model for response generation"
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f806",
+      "Step ID": "ST-006",
+      "Workflow ID": "WF-003",
+      "Step Name": "Lead Scoring Setup",
+      "Responsible": "Sales Ops",
+      "Estimated Time (h)": "2.0",
+      "Status": "Completed",
+      "Order": 1,
+      "Description": "Set up automated lead scoring system"
+    }
+  ]
+} 

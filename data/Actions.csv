@@ -1,0 +1,547 @@
+Action ID,Step ID,Action Name,System/Manual,Tool Used,Estimated Time (h),Action Cost ($)
+ACT-001,ST-001,AI-Based Pattern Detection,Manual,Datadog,0.23,11.67
+ACT-002,ST-002,Validate Logs,Manual,JIRA,0.2,10.0
+ACT-003,ST-002,AI-Based Pattern Detection,Manual,Slack,0.13,6.67
+ACT-004,ST-002,Manual Correction,Manual,BigQuery,0.07,3.33
+ACT-005,ST-003,Run SQL Query,System,Datadog,0.25,12.5
+ACT-006,ST-003,AI-Based Pattern Detection,System,Slack,0.22,10.83
+ACT-007,ST-003,Manual Correction,System,Slack,0.05,2.5
+ACT-008,ST-004,Run SQL Query,Manual,Datadog,0.07,3.33
+ACT-009,ST-004,Run SQL Query,Manual,Excel,0.18,9.17
+ACT-010,ST-004,AI-Based Pattern Detection,System,Redshift,0.2,10.0
+ACT-011,ST-005,AI-Based Pattern Detection,System,Looker,0.05,2.5
+ACT-012,ST-006,Validate Logs,Manual,Grafana,0.1,5.0
+ACT-013,ST-007,Run SQL Query,System,Looker,0.2,10.0
+ACT-014,ST-008,Manual Correction,System,Redshift,0.03,1.67
+ACT-015,ST-009,AI-Based Pattern Detection,System,Excel,0.08,4.17
+ACT-016,ST-009,Manual Correction,System,Excel,0.23,11.67
+ACT-017,ST-010,Validate Logs,Manual,BigQuery,0.23,11.67
+ACT-018,ST-010,Validate Logs,Manual,Snowflake,0.22,10.83
+ACT-019,ST-010,AI-Based Pattern Detection,Manual,Looker,0.03,1.67
+ACT-020,ST-011,AI-Based Pattern Detection,System,Snowflake,0.15,7.5
+ACT-021,ST-012,Manual Correction,System,Snowflake,0.13,6.67
+ACT-022,ST-012,AI-Based Pattern Detection,Manual,BigQuery,0.23,11.67
+ACT-023,ST-012,Generate Report,Manual,JIRA,0.22,10.83
+ACT-024,ST-013,Generate Report,Manual,Excel,0.05,2.5
+ACT-025,ST-013,Manual Correction,System,Slack,0.17,8.33
+ACT-026,ST-013,Validate Logs,System,Grafana,0.05,2.5
+ACT-027,ST-014,AI-Based Pattern Detection,System,Redshift,0.17,8.33
+ACT-028,ST-014,AI-Based Pattern Detection,System,BigQuery,0.15,7.5
+ACT-029,ST-014,AI-Based Pattern Detection,Manual,JIRA,0.23,11.67
+ACT-030,ST-015,Manual Correction,System,Looker,0.2,10.0
+ACT-031,ST-016,Run SQL Query,Manual,BigQuery,0.05,2.5
+ACT-032,ST-016,Run SQL Query,System,Grafana,0.23,11.67
+ACT-033,ST-016,Validate Logs,System,Excel,0.17,8.33
+ACT-034,ST-017,Manual Correction,System,Looker,0.23,11.67
+ACT-035,ST-017,Manual Correction,Manual,Excel,0.05,2.5
+ACT-036,ST-017,Run SQL Query,Manual,Excel,0.1,5.0
+ACT-037,ST-018,AI-Based Pattern Detection,Manual,Slack,0.12,5.83
+ACT-038,ST-019,Manual Correction,Manual,Slack,0.23,11.67
+ACT-039,ST-019,Validate Logs,System,Slack,0.05,2.5
+ACT-040,ST-019,Generate Report,Manual,BigQuery,0.07,3.33
+ACT-041,ST-020,Validate Logs,Manual,Grafana,0.07,3.33
+ACT-042,ST-020,Manual Correction,System,Slack,0.17,8.33
+ACT-043,ST-020,Manual Correction,System,JIRA,0.03,1.67
+ACT-044,ST-021,Validate Logs,System,Excel,0.03,1.67
+ACT-045,ST-021,Run SQL Query,System,Grafana,0.1,5.0
+ACT-046,ST-021,Generate Report,Manual,Excel,0.12,5.83
+ACT-047,ST-022,Run SQL Query,System,Looker,0.03,1.67
+ACT-048,ST-022,Run SQL Query,Manual,Snowflake,0.1,5.0
+ACT-049,ST-022,Manual Correction,System,Looker,0.08,4.17
+ACT-050,ST-023,Run SQL Query,Manual,Looker,0.17,8.33
+ACT-051,ST-024,Run SQL Query,System,Slack,0.22,10.83
+ACT-052,ST-024,AI-Based Pattern Detection,Manual,Slack,0.05,2.5
+ACT-053,ST-025,Generate Report,Manual,Redshift,0.17,8.33
+ACT-054,ST-026,AI-Based Pattern Detection,Manual,Excel,0.08,4.17
+ACT-055,ST-026,Validate Logs,Manual,BigQuery,0.2,10.0
+ACT-056,ST-027,AI-Based Pattern Detection,System,Redshift,0.08,4.17
+ACT-057,ST-027,Run SQL Query,Manual,Datadog,0.13,6.67
+ACT-058,ST-028,Run SQL Query,System,Datadog,0.08,4.17
+ACT-059,ST-029,AI-Based Pattern Detection,System,Excel,0.08,4.17
+ACT-060,ST-029,Manual Correction,System,Redshift,0.15,7.5
+ACT-061,ST-029,Validate Logs,System,Snowflake,0.2,10.0
+ACT-062,ST-030,AI-Based Pattern Detection,Manual,Excel,0.13,6.67
+ACT-063,ST-030,Generate Report,Manual,Redshift,0.2,10.0
+ACT-064,ST-031,AI-Based Pattern Detection,Manual,Datadog,0.18,9.17
+ACT-065,ST-031,Validate Logs,System,Excel,0.12,5.83
+ACT-066,ST-031,Run SQL Query,Manual,Looker,0.25,12.5
+ACT-067,ST-032,Run SQL Query,Manual,Snowflake,0.03,1.67
+ACT-068,ST-033,Validate Logs,System,Snowflake,0.08,4.17
+ACT-069,ST-033,Generate Report,System,Slack,0.05,2.5
+ACT-070,ST-034,AI-Based Pattern Detection,System,BigQuery,0.12,5.83
+ACT-071,ST-035,AI-Based Pattern Detection,Manual,Slack,0.2,10.0
+ACT-072,ST-036,Validate Logs,Manual,Grafana,0.22,10.83
+ACT-073,ST-036,Run SQL Query,System,BigQuery,0.22,10.83
+ACT-074,ST-037,Generate Report,Manual,Grafana,0.03,1.67
+ACT-075,ST-037,AI-Based Pattern Detection,Manual,Snowflake,0.23,11.67
+ACT-076,ST-037,Manual Correction,System,Excel,0.08,4.17
+ACT-077,ST-038,Generate Report,Manual,JIRA,0.03,1.67
+ACT-078,ST-039,Manual Correction,System,Slack,0.07,3.33
+ACT-079,ST-040,Run SQL Query,System,Datadog,0.25,12.5
+ACT-080,ST-040,AI-Based Pattern Detection,System,BigQuery,0.18,9.17
+ACT-081,ST-040,Validate Logs,Manual,Excel,0.23,11.67
+ACT-082,ST-041,AI-Based Pattern Detection,Manual,BigQuery,0.13,6.67
+ACT-083,ST-041,Validate Logs,System,Slack,0.07,3.33
+ACT-084,ST-042,AI-Based Pattern Detection,System,Looker,0.12,5.83
+ACT-085,ST-042,Run SQL Query,System,Looker,0.12,5.83
+ACT-086,ST-042,Run SQL Query,Manual,Slack,0.07,3.33
+ACT-087,ST-043,Manual Correction,System,Grafana,0.15,7.5
+ACT-088,ST-043,Generate Report,Manual,BigQuery,0.13,6.67
+ACT-089,ST-044,AI-Based Pattern Detection,Manual,Slack,0.05,2.5
+ACT-090,ST-045,Manual Correction,System,Slack,0.13,6.67
+ACT-091,ST-045,Generate Report,Manual,Redshift,0.08,4.17
+ACT-092,ST-045,Validate Logs,Manual,BigQuery,0.05,2.5
+ACT-093,ST-046,Manual Correction,System,Slack,0.22,10.83
+ACT-094,ST-046,Run SQL Query,System,Excel,0.23,11.67
+ACT-095,ST-047,Manual Correction,Manual,Redshift,0.15,7.5
+ACT-096,ST-047,AI-Based Pattern Detection,System,Redshift,0.22,10.83
+ACT-097,ST-048,Validate Logs,Manual,Looker,0.08,4.17
+ACT-098,ST-049,Validate Logs,System,Looker,0.13,6.67
+ACT-099,ST-049,Manual Correction,System,JIRA,0.12,5.83
+ACT-100,ST-049,AI-Based Pattern Detection,System,JIRA,0.17,8.33
+ACT-101,ST-050,Run SQL Query,Manual,Grafana,0.03,1.67
+ACT-102,ST-050,Run SQL Query,Manual,BigQuery,0.2,10.0
+ACT-103,ST-051,Validate Logs,Manual,BigQuery,0.18,9.17
+ACT-104,ST-051,Validate Logs,Manual,Grafana,0.08,4.17
+ACT-105,ST-052,Run SQL Query,Manual,BigQuery,0.05,2.5
+ACT-106,ST-052,Generate Report,System,JIRA,0.03,1.67
+ACT-107,ST-053,Run SQL Query,Manual,Snowflake,0.2,10.0
+ACT-108,ST-053,Manual Correction,System,Excel,0.12,5.83
+ACT-109,ST-054,Validate Logs,System,Snowflake,0.13,6.67
+ACT-110,ST-054,Validate Logs,System,Slack,0.12,5.83
+ACT-111,ST-054,Manual Correction,System,Snowflake,0.12,5.83
+ACT-112,ST-055,Manual Correction,System,Slack,0.18,9.17
+ACT-113,ST-055,Validate Logs,System,Slack,0.18,9.17
+ACT-114,ST-056,AI-Based Pattern Detection,Manual,Looker,0.2,10.0
+ACT-115,ST-056,Validate Logs,Manual,JIRA,0.05,2.5
+ACT-116,ST-056,Manual Correction,Manual,Slack,0.03,1.67
+ACT-117,ST-057,Run SQL Query,Manual,Datadog,0.2,10.0
+ACT-118,ST-057,Generate Report,Manual,Excel,0.18,9.17
+ACT-119,ST-057,AI-Based Pattern Detection,Manual,Snowflake,0.1,5.0
+ACT-120,ST-058,AI-Based Pattern Detection,System,JIRA,0.25,12.5
+ACT-121,ST-058,Validate Logs,Manual,Looker,0.1,5.0
+ACT-122,ST-058,AI-Based Pattern Detection,Manual,Looker,0.23,11.67
+ACT-123,ST-059,Validate Logs,Manual,Looker,0.18,9.17
+ACT-124,ST-060,AI-Based Pattern Detection,System,Redshift,0.18,9.17
+ACT-125,ST-061,Run SQL Query,Manual,Looker,0.12,5.83
+ACT-126,ST-061,Run SQL Query,Manual,Redshift,0.22,10.83
+ACT-127,ST-062,Generate Report,Manual,Snowflake,0.07,3.33
+ACT-128,ST-062,Generate Report,Manual,Looker,0.17,8.33
+ACT-129,ST-063,Generate Report,System,Grafana,0.07,3.33
+ACT-130,ST-064,AI-Based Pattern Detection,Manual,Slack,0.23,11.67
+ACT-131,ST-064,AI-Based Pattern Detection,Manual,JIRA,0.22,10.83
+ACT-132,ST-064,Validate Logs,System,BigQuery,0.1,5.0
+ACT-133,ST-065,Generate Report,Manual,Slack,0.17,8.33
+ACT-134,ST-065,AI-Based Pattern Detection,Manual,BigQuery,0.13,6.67
+ACT-135,ST-065,AI-Based Pattern Detection,Manual,Redshift,0.25,12.5
+ACT-136,ST-066,Run SQL Query,System,JIRA,0.1,5.0
+ACT-137,ST-066,Manual Correction,Manual,BigQuery,0.18,9.17
+ACT-138,ST-067,Generate Report,Manual,BigQuery,0.18,9.17
+ACT-139,ST-068,Validate Logs,System,Slack,0.23,11.67
+ACT-140,ST-068,Manual Correction,System,Datadog,0.23,11.67
+ACT-141,ST-068,Run SQL Query,System,BigQuery,0.12,5.83
+ACT-142,ST-069,AI-Based Pattern Detection,System,Looker,0.1,5.0
+ACT-143,ST-069,Validate Logs,System,Slack,0.2,10.0
+ACT-144,ST-069,Manual Correction,System,Datadog,0.12,5.83
+ACT-145,ST-070,AI-Based Pattern Detection,System,BigQuery,0.1,5.0
+ACT-146,ST-071,AI-Based Pattern Detection,System,Slack,0.03,1.67
+ACT-147,ST-071,Manual Correction,System,Looker,0.03,1.67
+ACT-148,ST-071,Generate Report,System,Excel,0.05,2.5
+ACT-149,ST-072,Run SQL Query,Manual,Datadog,0.03,1.67
+ACT-150,ST-072,Run SQL Query,System,JIRA,0.2,10.0
+ACT-151,ST-073,Validate Logs,System,Slack,0.05,2.5
+ACT-152,ST-073,AI-Based Pattern Detection,System,Snowflake,0.15,7.5
+ACT-153,ST-074,Manual Correction,System,Snowflake,0.15,7.5
+ACT-154,ST-075,Validate Logs,System,JIRA,0.15,7.5
+ACT-155,ST-075,Run SQL Query,System,Redshift,0.03,1.67
+ACT-156,ST-075,Manual Correction,System,Snowflake,0.18,9.17
+ACT-157,ST-076,AI-Based Pattern Detection,System,JIRA,0.05,2.5
+ACT-158,ST-077,Manual Correction,Manual,Snowflake,0.03,1.67
+ACT-159,ST-077,Generate Report,System,Redshift,0.05,2.5
+ACT-160,ST-078,Manual Correction,Manual,Slack,0.13,6.67
+ACT-161,ST-078,Generate Report,System,JIRA,0.17,8.33
+ACT-162,ST-078,AI-Based Pattern Detection,System,JIRA,0.1,5.0
+ACT-163,ST-079,Validate Logs,System,Grafana,0.17,8.33
+ACT-164,ST-080,Generate Report,Manual,Datadog,0.23,11.67
+ACT-165,ST-080,AI-Based Pattern Detection,Manual,Excel,0.08,4.17
+ACT-166,ST-080,Manual Correction,System,Datadog,0.07,3.33
+ACT-167,ST-081,Validate Logs,System,Datadog,0.23,11.67
+ACT-168,ST-081,Run SQL Query,System,Redshift,0.18,9.17
+ACT-169,ST-081,Manual Correction,Manual,Looker,0.17,8.33
+ACT-170,ST-082,Run SQL Query,Manual,Datadog,0.25,12.5
+ACT-171,ST-083,AI-Based Pattern Detection,System,Excel,0.05,2.5
+ACT-172,ST-083,AI-Based Pattern Detection,System,Excel,0.17,8.33
+ACT-173,ST-084,Validate Logs,Manual,Excel,0.07,3.33
+ACT-174,ST-085,Validate Logs,Manual,Redshift,0.15,7.5
+ACT-175,ST-085,Validate Logs,System,Excel,0.03,1.67
+ACT-176,ST-086,Run SQL Query,Manual,BigQuery,0.08,4.17
+ACT-177,ST-087,Manual Correction,Manual,Slack,0.22,10.83
+ACT-178,ST-087,Validate Logs,Manual,Redshift,0.05,2.5
+ACT-179,ST-087,Validate Logs,Manual,Redshift,0.22,10.83
+ACT-180,ST-088,Manual Correction,Manual,Looker,0.25,12.5
+ACT-181,ST-089,Validate Logs,Manual,Grafana,0.03,1.67
+ACT-182,ST-089,Manual Correction,Manual,Looker,0.07,3.33
+ACT-183,ST-090,Generate Report,System,Datadog,0.2,10.0
+ACT-184,ST-090,Manual Correction,System,BigQuery,0.08,4.17
+ACT-185,ST-090,Manual Correction,Manual,Slack,0.23,11.67
+ACT-186,ST-091,Validate Logs,System,Slack,0.03,1.67
+ACT-187,ST-091,Validate Logs,Manual,Slack,0.1,5.0
+ACT-188,ST-091,Validate Logs,System,Looker,0.08,4.17
+ACT-189,ST-092,Run SQL Query,System,Grafana,0.15,7.5
+ACT-190,ST-092,Manual Correction,Manual,Looker,0.05,2.5
+ACT-191,ST-093,Manual Correction,System,Excel,0.13,6.67
+ACT-192,ST-093,Generate Report,System,Grafana,0.2,10.0
+ACT-193,ST-094,Generate Report,System,Grafana,0.1,5.0
+ACT-194,ST-094,Manual Correction,System,Slack,0.2,10.0
+ACT-195,ST-095,Manual Correction,Manual,Grafana,0.2,10.0
+ACT-196,ST-096,Validate Logs,System,Excel,0.25,12.5
+ACT-197,ST-096,AI-Based Pattern Detection,System,Looker,0.17,8.33
+ACT-198,ST-097,Run SQL Query,Manual,BigQuery,0.17,8.33
+ACT-199,ST-098,Manual Correction,Manual,Grafana,0.13,6.67
+ACT-200,ST-098,Manual Correction,System,Excel,0.13,6.67
+ACT-201,ST-099,AI-Based Pattern Detection,Manual,Redshift,0.23,11.67
+ACT-202,ST-100,Manual Correction,System,Looker,0.2,10.0
+ACT-203,ST-100,Generate Report,Manual,Redshift,0.17,8.33
+ACT-204,ST-101,AI-Based Pattern Detection,System,Snowflake,0.25,12.5
+ACT-205,ST-102,Run SQL Query,Manual,Grafana,0.18,9.17
+ACT-206,ST-102,AI-Based Pattern Detection,Manual,Datadog,0.25,12.5
+ACT-207,ST-103,Run SQL Query,System,Grafana,0.18,9.17
+ACT-208,ST-104,Validate Logs,System,Slack,0.03,1.67
+ACT-209,ST-105,Validate Logs,System,BigQuery,0.13,6.67
+ACT-210,ST-105,AI-Based Pattern Detection,System,Looker,0.12,5.83
+ACT-211,ST-105,Manual Correction,System,Datadog,0.23,11.67
+ACT-212,ST-106,Run SQL Query,Manual,Redshift,0.12,5.83
+ACT-213,ST-107,Generate Report,Manual,Datadog,0.18,9.17
+ACT-214,ST-108,Run SQL Query,Manual,Looker,0.23,11.67
+ACT-215,ST-108,Validate Logs,Manual,BigQuery,0.18,9.17
+ACT-216,ST-108,Run SQL Query,System,Datadog,0.13,6.67
+ACT-217,ST-109,Run SQL Query,Manual,Grafana,0.12,5.83
+ACT-218,ST-109,Validate Logs,System,JIRA,0.08,4.17
+ACT-219,ST-109,AI-Based Pattern Detection,System,Excel,0.12,5.83
+ACT-220,ST-110,Generate Report,System,Redshift,0.1,5.0
+ACT-221,ST-110,Run SQL Query,Manual,Datadog,0.25,12.5
+ACT-222,ST-110,Manual Correction,System,Datadog,0.05,2.5
+ACT-223,ST-111,Manual Correction,System,Redshift,0.23,11.67
+ACT-224,ST-111,Validate Logs,Manual,Redshift,0.03,1.67
+ACT-225,ST-112,Run SQL Query,System,Excel,0.13,6.67
+ACT-226,ST-112,Manual Correction,Manual,Redshift,0.23,11.67
+ACT-227,ST-112,Generate Report,Manual,Snowflake,0.13,6.67
+ACT-228,ST-113,Generate Report,Manual,Snowflake,0.13,6.67
+ACT-229,ST-114,Generate Report,System,Looker,0.08,4.17
+ACT-230,ST-114,Validate Logs,Manual,Looker,0.03,1.67
+ACT-231,ST-114,Validate Logs,Manual,Excel,0.22,10.83
+ACT-232,ST-115,Manual Correction,System,Excel,0.22,10.83
+ACT-233,ST-116,AI-Based Pattern Detection,Manual,Redshift,0.22,10.83
+ACT-234,ST-116,Validate Logs,System,Excel,0.23,11.67
+ACT-235,ST-117,Generate Report,System,Datadog,0.08,4.17
+ACT-236,ST-117,Manual Correction,System,Slack,0.08,4.17
+ACT-237,ST-117,Generate Report,Manual,Grafana,0.1,5.0
+ACT-238,ST-118,Generate Report,Manual,BigQuery,0.03,1.67
+ACT-239,ST-119,AI-Based Pattern Detection,Manual,Grafana,0.08,4.17
+ACT-240,ST-119,AI-Based Pattern Detection,Manual,BigQuery,0.1,5.0
+ACT-241,ST-120,Manual Correction,Manual,Grafana,0.05,2.5
+ACT-242,ST-120,Run SQL Query,Manual,BigQuery,0.2,10.0
+ACT-243,ST-120,AI-Based Pattern Detection,Manual,Grafana,0.07,3.33
+ACT-244,ST-121,Run SQL Query,System,Excel,0.05,2.5
+ACT-245,ST-121,AI-Based Pattern Detection,System,BigQuery,0.08,4.17
+ACT-246,ST-122,Run SQL Query,System,Grafana,0.18,9.17
+ACT-247,ST-122,Generate Report,System,Looker,0.12,5.83
+ACT-248,ST-122,Validate Logs,System,Looker,0.17,8.33
+ACT-249,ST-123,Run SQL Query,System,BigQuery,0.07,3.33
+ACT-250,ST-123,Manual Correction,System,Grafana,0.23,11.67
+ACT-251,ST-123,Run SQL Query,Manual,JIRA,0.03,1.67
+ACT-252,ST-124,Generate Report,Manual,JIRA,0.22,10.83
+ACT-253,ST-124,AI-Based Pattern Detection,Manual,Snowflake,0.22,10.83
+ACT-254,ST-124,Generate Report,Manual,Slack,0.15,7.5
+ACT-255,ST-125,Manual Correction,Manual,Datadog,0.08,4.17
+ACT-256,ST-125,Validate Logs,Manual,JIRA,0.08,4.17
+ACT-257,ST-126,Generate Report,Manual,Excel,0.03,1.67
+ACT-258,ST-126,Manual Correction,System,Slack,0.12,5.83
+ACT-259,ST-127,Validate Logs,Manual,Looker,0.22,10.83
+ACT-260,ST-128,Generate Report,Manual,Grafana,0.05,2.5
+ACT-261,ST-128,Manual Correction,System,JIRA,0.17,8.33
+ACT-262,ST-128,Run SQL Query,System,Datadog,0.22,10.83
+ACT-263,ST-129,Validate Logs,Manual,Snowflake,0.03,1.67
+ACT-264,ST-129,Validate Logs,System,Datadog,0.05,2.5
+ACT-265,ST-130,Validate Logs,Manual,Datadog,0.17,8.33
+ACT-266,ST-130,AI-Based Pattern Detection,System,BigQuery,0.17,8.33
+ACT-267,ST-130,Validate Logs,System,Snowflake,0.08,4.17
+ACT-268,ST-131,Validate Logs,System,Excel,0.15,7.5
+ACT-269,ST-131,Run SQL Query,System,Excel,0.18,9.17
+ACT-270,ST-131,Run SQL Query,System,Looker,0.25,12.5
+ACT-271,ST-132,Run SQL Query,Manual,Grafana,0.17,8.33
+ACT-272,ST-132,Validate Logs,Manual,BigQuery,0.08,4.17
+ACT-273,ST-132,Generate Report,Manual,Snowflake,0.1,5.0
+ACT-274,ST-133,AI-Based Pattern Detection,System,Grafana,0.23,11.67
+ACT-275,ST-134,Manual Correction,System,Snowflake,0.05,2.5
+ACT-276,ST-134,Run SQL Query,Manual,Slack,0.1,5.0
+ACT-277,ST-135,Run SQL Query,Manual,Excel,0.13,6.67
+ACT-278,ST-136,Run SQL Query,System,Excel,0.12,5.83
+ACT-279,ST-137,AI-Based Pattern Detection,System,Slack,0.12,5.83
+ACT-280,ST-138,Run SQL Query,System,Datadog,0.05,2.5
+ACT-281,ST-138,Manual Correction,Manual,Grafana,0.18,9.17
+ACT-282,ST-138,Run SQL Query,System,Datadog,0.03,1.67
+ACT-283,ST-139,Run SQL Query,System,BigQuery,0.22,10.83
+ACT-284,ST-139,Run SQL Query,System,Looker,0.13,6.67
+ACT-285,ST-139,Manual Correction,System,BigQuery,0.2,10.0
+ACT-286,ST-140,Manual Correction,System,Datadog,0.07,3.33
+ACT-287,ST-140,Generate Report,Manual,JIRA,0.25,12.5
+ACT-288,ST-140,AI-Based Pattern Detection,Manual,Excel,0.13,6.67
+ACT-289,ST-141,Generate Report,System,Datadog,0.03,1.67
+ACT-290,ST-141,Manual Correction,System,Snowflake,0.08,4.17
+ACT-291,ST-142,Generate Report,System,Grafana,0.18,9.17
+ACT-292,ST-142,Run SQL Query,System,Redshift,0.22,10.83
+ACT-293,ST-143,Generate Report,Manual,Datadog,0.03,1.67
+ACT-294,ST-143,Run SQL Query,System,BigQuery,0.1,5.0
+ACT-295,ST-143,AI-Based Pattern Detection,Manual,Redshift,0.15,7.5
+ACT-296,ST-144,Manual Correction,System,JIRA,0.05,2.5
+ACT-297,ST-144,Manual Correction,System,Redshift,0.17,8.33
+ACT-298,ST-144,AI-Based Pattern Detection,Manual,Slack,0.17,8.33
+ACT-299,ST-145,Generate Report,Manual,Looker,0.22,10.83
+ACT-300,ST-146,Run SQL Query,System,Looker,0.1,5.0
+ACT-301,ST-146,Validate Logs,Manual,Redshift,0.22,10.83
+ACT-302,ST-147,AI-Based Pattern Detection,Manual,Grafana,0.23,11.67
+ACT-303,ST-147,Manual Correction,System,Grafana,0.17,8.33
+ACT-304,ST-148,Generate Report,System,BigQuery,0.22,10.83
+ACT-305,ST-148,AI-Based Pattern Detection,System,JIRA,0.2,10.0
+ACT-306,ST-149,AI-Based Pattern Detection,System,JIRA,0.23,11.67
+ACT-307,ST-150,Manual Correction,System,Snowflake,0.08,4.17
+ACT-308,ST-150,AI-Based Pattern Detection,Manual,Grafana,0.25,12.5
+ACT-309,ST-151,Run SQL Query,Manual,JIRA,0.08,4.17
+ACT-310,ST-151,Manual Correction,System,Snowflake,0.22,10.83
+ACT-311,ST-152,AI-Based Pattern Detection,Manual,JIRA,0.23,11.67
+ACT-312,ST-152,Run SQL Query,Manual,Redshift,0.18,9.17
+ACT-313,ST-152,Run SQL Query,System,Looker,0.15,7.5
+ACT-314,ST-153,Validate Logs,Manual,Slack,0.12,5.83
+ACT-315,ST-153,Run SQL Query,Manual,Grafana,0.07,3.33
+ACT-316,ST-154,AI-Based Pattern Detection,System,Datadog,0.1,5.0
+ACT-317,ST-154,Run SQL Query,System,Snowflake,0.18,9.17
+ACT-318,ST-154,Manual Correction,System,Slack,0.22,10.83
+ACT-319,ST-155,Manual Correction,System,Slack,0.22,10.83
+ACT-320,ST-155,Run SQL Query,Manual,Slack,0.2,10.0
+ACT-321,ST-156,Validate Logs,System,Snowflake,0.2,10.0
+ACT-322,ST-157,Validate Logs,System,Redshift,0.1,5.0
+ACT-323,ST-157,AI-Based Pattern Detection,Manual,Datadog,0.2,10.0
+ACT-324,ST-157,Generate Report,System,Looker,0.08,4.17
+ACT-325,ST-158,Generate Report,System,BigQuery,0.25,12.5
+ACT-326,ST-159,AI-Based Pattern Detection,Manual,Datadog,0.08,4.17
+ACT-327,ST-160,Manual Correction,System,Snowflake,0.15,7.5
+ACT-328,ST-161,Validate Logs,Manual,Redshift,0.1,5.0
+ACT-329,ST-161,Validate Logs,Manual,Excel,0.25,12.5
+ACT-330,ST-162,Manual Correction,Manual,Redshift,0.23,11.67
+ACT-331,ST-162,Manual Correction,Manual,Snowflake,0.25,12.5
+ACT-332,ST-163,Manual Correction,Manual,Redshift,0.07,3.33
+ACT-333,ST-163,Generate Report,System,Grafana,0.1,5.0
+ACT-334,ST-163,Generate Report,System,Looker,0.1,5.0
+ACT-335,ST-164,Validate Logs,Manual,Snowflake,0.23,11.67
+ACT-336,ST-164,Run SQL Query,System,Grafana,0.05,2.5
+ACT-337,ST-165,Manual Correction,Manual,JIRA,0.03,1.67
+ACT-338,ST-165,Validate Logs,Manual,Looker,0.18,9.17
+ACT-339,ST-165,Run SQL Query,Manual,BigQuery,0.05,2.5
+ACT-340,ST-166,Run SQL Query,System,Datadog,0.03,1.67
+ACT-341,ST-166,Generate Report,System,Slack,0.17,8.33
+ACT-342,ST-167,Manual Correction,System,Grafana,0.07,3.33
+ACT-343,ST-167,Validate Logs,Manual,Grafana,0.17,8.33
+ACT-344,ST-168,Manual Correction,Manual,JIRA,0.15,7.5
+ACT-345,ST-169,Generate Report,System,Redshift,0.1,5.0
+ACT-346,ST-169,AI-Based Pattern Detection,System,Snowflake,0.2,10.0
+ACT-347,ST-169,Manual Correction,System,Redshift,0.23,11.67
+ACT-348,ST-170,AI-Based Pattern Detection,System,Excel,0.17,8.33
+ACT-349,ST-170,AI-Based Pattern Detection,Manual,Looker,0.07,3.33
+ACT-350,ST-170,Generate Report,System,Looker,0.17,8.33
+ACT-351,ST-171,Generate Report,Manual,Redshift,0.25,12.5
+ACT-352,ST-172,Manual Correction,Manual,Looker,0.13,6.67
+ACT-353,ST-173,Manual Correction,System,Datadog,0.25,12.5
+ACT-354,ST-173,Generate Report,System,Excel,0.15,7.5
+ACT-355,ST-173,Run SQL Query,Manual,BigQuery,0.2,10.0
+ACT-356,ST-174,Manual Correction,System,Looker,0.07,3.33
+ACT-357,ST-174,Manual Correction,System,Redshift,0.05,2.5
+ACT-358,ST-175,AI-Based Pattern Detection,System,Snowflake,0.13,6.67
+ACT-359,ST-175,Validate Logs,Manual,Datadog,0.07,3.33
+ACT-360,ST-176,Validate Logs,System,Excel,0.05,2.5
+ACT-361,ST-176,Generate Report,Manual,Datadog,0.25,12.5
+ACT-362,ST-177,AI-Based Pattern Detection,System,Excel,0.08,4.17
+ACT-363,ST-177,Manual Correction,Manual,Grafana,0.1,5.0
+ACT-364,ST-177,Generate Report,System,Redshift,0.08,4.17
+ACT-365,ST-178,Manual Correction,Manual,Snowflake,0.08,4.17
+ACT-366,ST-178,AI-Based Pattern Detection,Manual,Redshift,0.25,12.5
+ACT-367,ST-178,Validate Logs,Manual,Datadog,0.2,10.0
+ACT-368,ST-179,Manual Correction,Manual,Slack,0.05,2.5
+ACT-369,ST-179,Manual Correction,Manual,BigQuery,0.15,7.5
+ACT-370,ST-179,Run SQL Query,Manual,JIRA,0.12,5.83
+ACT-371,ST-180,Run SQL Query,System,BigQuery,0.17,8.33
+ACT-372,ST-181,Run SQL Query,System,Looker,0.07,3.33
+ACT-373,ST-182,AI-Based Pattern Detection,Manual,Grafana,0.2,10.0
+ACT-374,ST-182,AI-Based Pattern Detection,Manual,Redshift,0.03,1.67
+ACT-375,ST-182,Validate Logs,Manual,Datadog,0.22,10.83
+ACT-376,ST-183,Manual Correction,System,Snowflake,0.25,12.5
+ACT-377,ST-184,AI-Based Pattern Detection,Manual,Looker,0.22,10.83
+ACT-378,ST-184,Validate Logs,System,Grafana,0.08,4.17
+ACT-379,ST-184,AI-Based Pattern Detection,System,BigQuery,0.08,4.17
+ACT-380,ST-185,Validate Logs,System,Slack,0.03,1.67
+ACT-381,ST-185,Generate Report,Manual,Looker,0.23,11.67
+ACT-382,ST-185,Manual Correction,System,Looker,0.07,3.33
+ACT-383,ST-186,AI-Based Pattern Detection,System,Looker,0.08,4.17
+ACT-384,ST-186,Manual Correction,System,Looker,0.05,2.5
+ACT-385,ST-187,AI-Based Pattern Detection,System,Datadog,0.22,10.83
+ACT-386,ST-187,AI-Based Pattern Detection,Manual,JIRA,0.12,5.83
+ACT-387,ST-187,AI-Based Pattern Detection,System,Snowflake,0.03,1.67
+ACT-388,ST-188,Validate Logs,Manual,Datadog,0.13,6.67
+ACT-389,ST-189,Generate Report,System,Excel,0.25,12.5
+ACT-390,ST-190,Manual Correction,System,Datadog,0.05,2.5
+ACT-391,ST-191,AI-Based Pattern Detection,Manual,Grafana,0.2,10.0
+ACT-392,ST-192,Validate Logs,Manual,Slack,0.07,3.33
+ACT-393,ST-192,Generate Report,Manual,Datadog,0.1,5.0
+ACT-394,ST-193,AI-Based Pattern Detection,System,Redshift,0.03,1.67
+ACT-395,ST-194,Validate Logs,System,Redshift,0.22,10.83
+ACT-396,ST-194,Validate Logs,System,Grafana,0.23,11.67
+ACT-397,ST-195,AI-Based Pattern Detection,Manual,Grafana,0.08,4.17
+ACT-398,ST-196,Validate Logs,Manual,BigQuery,0.08,4.17
+ACT-399,ST-197,Generate Report,Manual,Datadog,0.18,9.17
+ACT-400,ST-197,Generate Report,Manual,Snowflake,0.18,9.17
+ACT-401,ST-198,AI-Based Pattern Detection,Manual,Slack,0.1,5.0
+ACT-402,ST-199,Validate Logs,Manual,Looker,0.12,5.83
+ACT-403,ST-199,Validate Logs,Manual,Redshift,0.25,12.5
+ACT-404,ST-200,Validate Logs,System,Datadog,0.18,9.17
+ACT-405,ST-200,AI-Based Pattern Detection,System,Excel,0.25,12.5
+ACT-406,ST-200,Validate Logs,System,Excel,0.03,1.67
+ACT-407,ST-201,Validate Logs,Manual,Datadog,0.1,5.0
+ACT-408,ST-202,Validate Logs,System,Looker,0.05,2.5
+ACT-409,ST-203,AI-Based Pattern Detection,System,Snowflake,0.03,1.67
+ACT-410,ST-203,AI-Based Pattern Detection,Manual,Snowflake,0.18,9.17
+ACT-411,ST-204,Validate Logs,Manual,BigQuery,0.17,8.33
+ACT-412,ST-205,AI-Based Pattern Detection,System,Excel,0.1,5.0
+ACT-413,ST-206,Run SQL Query,System,BigQuery,0.07,3.33
+ACT-414,ST-207,AI-Based Pattern Detection,Manual,Looker,0.05,2.5
+ACT-415,ST-207,Generate Report,System,Looker,0.22,10.83
+ACT-416,ST-208,Generate Report,System,Snowflake,0.25,12.5
+ACT-417,ST-208,AI-Based Pattern Detection,Manual,BigQuery,0.17,8.33
+ACT-418,ST-208,Run SQL Query,System,Looker,0.12,5.83
+ACT-419,ST-209,AI-Based Pattern Detection,Manual,Snowflake,0.17,8.33
+ACT-420,ST-209,Manual Correction,Manual,Snowflake,0.15,7.5
+ACT-421,ST-209,Run SQL Query,System,Grafana,0.12,5.83
+ACT-422,ST-210,AI-Based Pattern Detection,Manual,Datadog,0.18,9.17
+ACT-423,ST-210,AI-Based Pattern Detection,Manual,Redshift,0.08,4.17
+ACT-424,ST-211,Run SQL Query,System,Excel,0.15,7.5
+ACT-425,ST-211,AI-Based Pattern Detection,Manual,Excel,0.07,3.33
+ACT-426,ST-212,AI-Based Pattern Detection,Manual,Redshift,0.23,11.67
+ACT-427,ST-212,Validate Logs,Manual,JIRA,0.23,11.67
+ACT-428,ST-212,Manual Correction,System,Slack,0.12,5.83
+ACT-429,ST-213,Run SQL Query,System,BigQuery,0.12,5.83
+ACT-430,ST-213,Run SQL Query,Manual,Looker,0.08,4.17
+ACT-431,ST-214,Generate Report,System,Snowflake,0.15,7.5
+ACT-432,ST-215,Generate Report,Manual,Snowflake,0.13,6.67
+ACT-433,ST-215,Generate Report,Manual,JIRA,0.07,3.33
+ACT-434,ST-216,Generate Report,System,JIRA,0.2,10.0
+ACT-435,ST-216,Run SQL Query,System,Redshift,0.22,10.83
+ACT-436,ST-216,Validate Logs,System,Snowflake,0.1,5.0
+ACT-437,ST-217,AI-Based Pattern Detection,Manual,Datadog,0.07,3.33
+ACT-438,ST-217,Run SQL Query,Manual,BigQuery,0.03,1.67
+ACT-439,ST-218,Validate Logs,System,JIRA,0.2,10.0
+ACT-440,ST-219,Validate Logs,System,Datadog,0.13,6.67
+ACT-441,ST-220,Generate Report,System,Excel,0.05,2.5
+ACT-442,ST-221,Generate Report,Manual,Looker,0.2,10.0
+ACT-443,ST-222,AI-Based Pattern Detection,Manual,Redshift,0.12,5.83
+ACT-444,ST-222,AI-Based Pattern Detection,System,Slack,0.15,7.5
+ACT-445,ST-223,Validate Logs,Manual,Grafana,0.12,5.83
+ACT-446,ST-224,Generate Report,Manual,Redshift,0.08,4.17
+ACT-447,ST-224,Generate Report,Manual,Datadog,0.08,4.17
+ACT-448,ST-224,Validate Logs,Manual,Redshift,0.08,4.17
+ACT-449,ST-225,Generate Report,Manual,Snowflake,0.18,9.17
+ACT-450,ST-225,AI-Based Pattern Detection,System,Excel,0.13,6.67
+ACT-451,ST-226,Run SQL Query,System,Redshift,0.17,8.33
+ACT-452,ST-227,AI-Based Pattern Detection,System,BigQuery,0.17,8.33
+ACT-453,ST-227,Generate Report,Manual,Redshift,0.08,4.17
+ACT-454,ST-227,Manual Correction,Manual,JIRA,0.1,5.0
+ACT-455,ST-228,Manual Correction,Manual,Redshift,0.13,6.67
+ACT-456,ST-228,Run SQL Query,Manual,Slack,0.2,10.0
+ACT-457,ST-229,Run SQL Query,System,Redshift,0.22,10.83
+ACT-458,ST-230,Validate Logs,System,Redshift,0.13,6.67
+ACT-459,ST-230,AI-Based Pattern Detection,Manual,Excel,0.25,12.5
+ACT-460,ST-230,Generate Report,System,Slack,0.03,1.67
+ACT-461,ST-231,Validate Logs,Manual,Redshift,0.23,11.67
+ACT-462,ST-231,AI-Based Pattern Detection,Manual,BigQuery,0.22,10.83
+ACT-463,ST-231,Run SQL Query,Manual,Datadog,0.22,10.83
+ACT-464,ST-232,Validate Logs,System,Excel,0.22,10.83
+ACT-465,ST-233,Validate Logs,Manual,Redshift,0.12,5.83
+ACT-466,ST-233,Validate Logs,System,JIRA,0.23,11.67
+ACT-467,ST-233,Manual Correction,System,Snowflake,0.2,10.0
+ACT-468,ST-234,Generate Report,Manual,Excel,0.22,10.83
+ACT-469,ST-235,Generate Report,System,BigQuery,0.23,11.67
+ACT-470,ST-235,Run SQL Query,System,Grafana,0.12,5.83
+ACT-471,ST-236,Validate Logs,Manual,Grafana,0.15,7.5
+ACT-472,ST-236,Manual Correction,System,BigQuery,0.23,11.67
+ACT-473,ST-237,Manual Correction,System,JIRA,0.08,4.17
+ACT-474,ST-238,AI-Based Pattern Detection,Manual,BigQuery,0.13,6.67
+ACT-475,ST-239,AI-Based Pattern Detection,Manual,Redshift,0.17,8.33
+ACT-476,ST-239,Validate Logs,System,Redshift,0.18,9.17
+ACT-477,ST-240,Validate Logs,System,Datadog,0.18,9.17
+ACT-478,ST-241,Manual Correction,Manual,Excel,0.1,5.0
+ACT-479,ST-242,Manual Correction,System,Grafana,0.18,9.17
+ACT-480,ST-242,Generate Report,Manual,Looker,0.12,5.83
+ACT-481,ST-243,Generate Report,System,Snowflake,0.25,12.5
+ACT-482,ST-243,Manual Correction,Manual,Datadog,0.12,5.83
+ACT-483,ST-243,Validate Logs,Manual,Redshift,0.07,3.33
+ACT-484,ST-244,Manual Correction,System,JIRA,0.22,10.83
+ACT-485,ST-244,Manual Correction,Manual,JIRA,0.13,6.67
+ACT-486,ST-244,Manual Correction,System,Looker,0.18,9.17
+ACT-487,ST-245,AI-Based Pattern Detection,Manual,Datadog,0.03,1.67
+ACT-488,ST-245,Generate Report,Manual,Redshift,0.2,10.0
+ACT-489,ST-246,Validate Logs,Manual,Looker,0.2,10.0
+ACT-490,ST-247,AI-Based Pattern Detection,Manual,Excel,0.1,5.0
+ACT-491,ST-248,Manual Correction,System,Redshift,0.18,9.17
+ACT-492,ST-249,Validate Logs,Manual,Looker,0.12,5.83
+ACT-493,ST-249,Run SQL Query,Manual,Slack,0.22,10.83
+ACT-494,ST-250,Validate Logs,Manual,Grafana,0.23,11.67
+ACT-495,ST-250,Generate Report,System,Slack,0.25,12.5
+ACT-496,ST-251,Generate Report,System,Redshift,0.23,11.67
+ACT-497,ST-251,AI-Based Pattern Detection,System,Slack,0.2,10.0
+ACT-498,ST-252,Generate Report,Manual,BigQuery,0.15,7.5
+ACT-499,ST-252,Validate Logs,System,Looker,0.12,5.83
+ACT-500,ST-252,Manual Correction,Manual,Snowflake,0.23,11.67
+ACT-501,ST-253,AI-Based Pattern Detection,System,Datadog,0.25,12.5
+ACT-502,ST-254,AI-Based Pattern Detection,Manual,Looker,0.17,8.33
+ACT-503,ST-254,Generate Report,Manual,Excel,0.05,2.5
+ACT-504,ST-255,Run SQL Query,Manual,Grafana,0.07,3.33
+ACT-505,ST-255,Run SQL Query,Manual,JIRA,0.23,11.67
+ACT-506,ST-256,Generate Report,Manual,Looker,0.13,6.67
+ACT-507,ST-257,Generate Report,System,JIRA,0.23,11.67
+ACT-508,ST-258,Run SQL Query,System,Datadog,0.23,11.67
+ACT-509,ST-259,AI-Based Pattern Detection,System,Excel,0.18,9.17
+ACT-510,ST-259,Validate Logs,System,Grafana,0.18,9.17
+ACT-511,ST-260,Validate Logs,Manual,BigQuery,0.23,11.67
+ACT-512,ST-261,AI-Based Pattern Detection,Manual,Grafana,0.08,4.17
+ACT-513,ST-262,Run SQL Query,Manual,Snowflake,0.08,4.17
+ACT-514,ST-262,Generate Report,System,Excel,0.05,2.5
+ACT-515,ST-262,Validate Logs,Manual,JIRA,0.07,3.33
+ACT-516,ST-263,Manual Correction,System,Excel,0.23,11.67
+ACT-517,ST-263,Manual Correction,System,Slack,0.2,10.0
+ACT-518,ST-263,Validate Logs,System,Looker,0.15,7.5
+ACT-519,ST-264,Run SQL Query,Manual,Excel,0.12,5.83
+ACT-520,ST-264,Manual Correction,Manual,Grafana,0.05,2.5
+ACT-521,ST-264,Manual Correction,Manual,Slack,0.13,6.67
+ACT-522,ST-265,Run SQL Query,System,BigQuery,0.05,2.5
+ACT-523,ST-265,Validate Logs,System,BigQuery,0.17,8.33
+ACT-524,ST-265,AI-Based Pattern Detection,Manual,Looker,0.22,10.83
+ACT-525,ST-266,Validate Logs,System,Datadog,0.23,11.67
+ACT-526,ST-266,AI-Based Pattern Detection,System,Slack,0.2,10.0
+ACT-527,ST-267,Run SQL Query,System,JIRA,0.03,1.67
+ACT-528,ST-268,AI-Based Pattern Detection,Manual,Looker,0.15,7.5
+ACT-529,ST-269,AI-Based Pattern Detection,System,Snowflake,0.17,8.33
+ACT-530,ST-269,AI-Based Pattern Detection,System,Redshift,0.03,1.67
+ACT-531,ST-269,AI-Based Pattern Detection,System,Grafana,0.12,5.83
+ACT-532,ST-270,Run SQL Query,System,Datadog,0.2,10.0
+ACT-533,ST-271,Manual Correction,Manual,Excel,0.23,11.67
+ACT-534,ST-272,Validate Logs,System,Slack,0.15,7.5
+ACT-535,ST-272,AI-Based Pattern Detection,Manual,Excel,0.05,2.5
+ACT-536,ST-272,Manual Correction,Manual,Redshift,0.13,6.67
+ACT-537,ST-273,AI-Based Pattern Detection,Manual,JIRA,0.15,7.5
+ACT-538,ST-273,AI-Based Pattern Detection,System,Slack,0.25,12.5
+ACT-539,ST-274,Generate Report,System,BigQuery,0.18,9.17
+ACT-540,ST-274,Run SQL Query,System,Snowflake,0.1,5.0
+ACT-541,ST-275,Run SQL Query,System,Slack,0.07,3.33
+ACT-542,ST-276,Validate Logs,System,Excel,0.25,12.5
+ACT-543,ST-276,AI-Based Pattern Detection,System,JIRA,0.23,11.67
+ACT-544,ST-277,AI-Based Pattern Detection,Manual,Excel,0.07,3.33
+ACT-545,ST-277,Manual Correction,Manual,Slack,0.07,3.33
+ACT-546,ST-277,Run SQL Query,Manual,BigQuery,0.18,9.17

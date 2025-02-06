@@ -1,0 +1,104 @@
+{
+  "workflows": [
+    {
+      "_id": "67a4e08095bd7c05a6d3f701",
+      "Workflow ID": "WF-001",
+      "Task ID": "T-001",
+      "Workflow Name": "Ticket Processing",
+      "Time Spent (h)": "15.2",
+      "Cost ($)": "760.00",
+      "Status": "Completed",
+      "Last Updated": "2024-03-15T10:30:00Z",
+      "tags": ["Automation", "Customer Facing"],
+      "apps": ["JIRA", "Slack"],
+      "automation_metrics": {
+        "automation_score": 70,
+        "manual_steps": 30,
+        "automated_steps": 70,
+        "ai_assisted_steps": 40
+      }
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f702",
+      "Workflow ID": "WF-002",
+      "Task ID": "T-001",
+      "Workflow Name": "Response Generation",
+      "Time Spent (h)": "18.5",
+      "Cost ($)": "925.00",
+      "Status": "In Progress",
+      "Last Updated": "2024-03-16T14:20:00Z",
+      "tags": ["Automation", "Customer Facing", "AI"],
+      "apps": ["GPT-4", "Slack"],
+      "automation_metrics": {
+        "automation_score": 85,
+        "manual_steps": 15,
+        "automated_steps": 85,
+        "ai_assisted_steps": 75
+      }
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f703",
+      "Workflow ID": "WF-003",
+      "Task ID": "T-002",
+      "Workflow Name": "Lead Qualification",
+      "Time Spent (h)": "12.8",
+      "Cost ($)": "640.00",
+      "Status": "Completed",
+      "Last Updated": "2024-03-14T09:15:00Z",
+      "tags": ["Data Analysis", "Business"],
+      "apps": ["BigQuery", "Looker"],
+      "automation_metrics": {
+        "automation_score": 75,
+        "manual_steps": 25,
+        "automated_steps": 75,
+        "ai_assisted_steps": 30
+      }
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f704",
+      "Workflow ID": "WF-004",
+      "Task ID": "T-002",
+      "Workflow Name": "Deal Analysis",
+      "Time Spent (h)": "16.4",
+      "Cost ($)": "820.00",
+      "Status": "Failed",
+      "Last Updated": "2024-03-15T16:45:00Z",
+      "tags": ["Data Analysis", "Business", "Internal"],
+      "apps": ["Excel", "Looker"],
+      "automation_metrics": {
+        "automation_score": 65,
+        "manual_steps": 35,
+        "automated_steps": 65,
+        "ai_assisted_steps": 25
+      }
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f705",
+      "Workflow ID": "WF-005",
+      "Task ID": "T-003",
+      "Workflow Name": "Feature Review",
+      "Time Spent (h)": "22.5",
+      "Cost ($)": "1125.00",
+      "Status": "Completed",
+      "Last Updated": "2024-03-16T11:30:00Z",
+      "tags": ["Technical", "Documentation"],
+      "apps": ["JIRA", "VS Code"],
+      "automation_metrics": {
+        "automation_score": 55,
+        "manual_steps": 45,
+        "automated_steps": 55,
+        "ai_assisted_steps": 35
+      }
+    },
+    {
+      "_id": "67a4e08095bd7c05a6d3f705",
+      "Workflow ID": "WF-005",
+      "Task ID": "T-004",
+      "Workflow Name": "Feature Review",
+      "Time Spent (h)": "22.5",
+      "Cost ($)": "1125.00",
+      "Status": "Completed",
+      "Last Updated": "2024-03-16T11:30:00Z"
+    }
+  ]
+} 
