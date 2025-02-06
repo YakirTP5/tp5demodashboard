@@ -3,6 +3,7 @@ import { LayoutDashboard, LineChart, Wand2, Users, Cable, ShieldCheck, Settings 
 import Sidebar from './components/Sidebar';
 import TopSection from './components/TopSection';
 import MainSection from './components/MainSection';
+import AiInsightsPanel from './components/AiInsightsPanel';
 import { AppProvider } from './context/AppContext';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <MainSection />
           </div>
         </main>
+        <AiInsightsPanel />
       </div>
     </AppProvider>
   );
