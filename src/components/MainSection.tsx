@@ -101,19 +101,19 @@ function MainSection() {
   const renderSessionMetrics = (session: any) => (
     <div className="grid grid-cols-4 gap-4 items-center">
       <div className="flex items-center text-sm text-gray-500">
-        <UsersIcon className="h-4 w-4 mr-1.5" />
-        {session.agent}
-      </div>
-      <div className="flex items-center text-sm text-gray-500">
         <Clock className="h-4 w-4 mr-1.5" />
-        {session.timeSpent.toFixed(1)}h
+        {session.duration.toFixed(1)}h
       </div>
       <div className="flex items-center text-sm text-gray-500">
         <DollarSign className="h-4 w-4 mr-1" />
         ${session.cost.toFixed(2)}
       </div>
+      <div className="flex items-center text-sm text-gray-500">
+        <Zap className="h-4 w-4 mr-1" />
+        {session.automation_metrics?.automation_score.toFixed(1) || '0'}%
+      </div>
       <div className="flex flex-wrap gap-1">
-        {session.toolsUsed.map((tool: string, index: number) => (
+        {session.tools_used?.map((tool: string, index: number) => (
           <span
             key={index}
             className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800"
