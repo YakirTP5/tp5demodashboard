@@ -1,44 +1,76 @@
 import React from 'react';
 import { LayoutDashboard, LineChart, Wand2, Users, Cable, ShieldCheck, Settings } from 'lucide-react';
 
-const navigation = [
-  { name: 'Dashboard', icon: LayoutDashboard, current: true },
-  { name: 'Analytics', icon: LineChart, current: false },
-  { name: 'Automation Assistant', icon: Wand2, current: false },
-  { name: 'Team', icon: Users, current: false },
-  { name: 'Integrations', icon: Cable, current: false },
-  { name: 'Admin Panel', icon: ShieldCheck, current: false },
-  { name: 'Settings', icon: Settings, current: false },
-];
+interface SidebarProps {
+  currentView: 'dashboard' | 'analysis';
+  onViewChange: (view: 'dashboard' | 'analysis') => void;
+}
 
-function Sidebar() {
+function Sidebar({ currentView, onViewChange }: SidebarProps) {
   return (
-    <div className="flex flex-col w-64 bg-white border-r border-gray-200">
-      <div className="flex items-center justify-center h-16 px-4 border-b border-gray-200">
-        <h1 className="text-xl font-bold text-gray-900">Tier.5</h1>
+    <div className="w-64 bg-white border-r border-gray-200">
+      <div className="h-16 flex items-center px-4 border-b border-gray-200">
+        <h1 className="text-xl font-semibold text-gray-800">TP5 Dashboard</h1>
       </div>
-      <nav className="flex-1 px-2 py-4 space-y-1">
-        {navigation.map((item) => (
-          <a
-            key={item.name}
-            href="#"
-            className={`
-              flex items-center px-4 py-2 text-sm font-medium rounded-md
-              ${
-                item.current
-                  ? 'bg-indigo-50 text-indigo-600'
-                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-              }
-            `}
-          >
-            <item.icon
-              className={`mr-3 h-5 w-5 ${
-                item.current ? 'text-indigo-600' : 'text-gray-400'
+      <nav className="p-4">
+        <ul className="space-y-2">
+          <li>
+            <button
+              onClick={() => onViewChange('dashboard')}
+              className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors ${
+                currentView === 'dashboard' 
+                  ? 'bg-indigo-50 text-indigo-600' 
+                  : 'text-gray-600 hover:bg-gray-50'
               }`}
-            />
-            {item.name}
-          </a>
-        ))}
+            >
+              <LayoutDashboard className="h-5 w-5" />
+              <span>Dashboard</span>
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => onViewChange('analysis')}
+              className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors ${
+                currentView === 'analysis' 
+                  ? 'bg-indigo-50 text-indigo-600' 
+                  : 'text-gray-600 hover:bg-gray-50'
+              }`}
+            >
+              <LineChart className="h-5 w-5" />
+              <span>Task Analysis</span>
+            </button>
+          </li>
+          <li>
+            <button className="w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50">
+              <Wand2 className="h-5 w-5" />
+              <span>AI Assistant</span>
+            </button>
+          </li>
+          <li>
+            <button className="w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50">
+              <Users className="h-5 w-5" />
+              <span>Team</span>
+            </button>
+          </li>
+          <li>
+            <button className="w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50">
+              <Cable className="h-5 w-5" />
+              <span>Integrations</span>
+            </button>
+          </li>
+          <li>
+            <button className="w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50">
+              <ShieldCheck className="h-5 w-5" />
+              <span>Security</span>
+            </button>
+          </li>
+          <li>
+            <button className="w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50">
+              <Settings className="h-5 w-5" />
+              <span>Settings</span>
+            </button>
+          </li>
+        </ul>
       </nav>
     </div>
   );
