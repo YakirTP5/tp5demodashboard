@@ -54,7 +54,7 @@ const mockInsights: Insight[] = [
 ];
 
 function AiInsightsPanel() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const getInsightIcon = (type: string) => {
     switch (type) {
