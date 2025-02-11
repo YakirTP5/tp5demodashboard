@@ -269,19 +269,19 @@ const mockEdges: WorkflowEdge[] = [
   }
 ];
 
-// Update node positions for top-down layout
+// Update node positions for a more flexible layout using a force-directed approach
 const nodePositions: NodePositions = {
-  n1: { x: 400, y: 50 },    // Start
-  n2: { x: 400, y: 150 },   // Initial Triage
-  n3: { x: 250, y: 250 },   // Log Analysis
-  n4: { x: 250, y: 350 },   // Error Check
-  n5: { x: 250, y: 450 },   // Wiki Search
-  n6: { x: 250, y: 550 },   // Code Review
-  n7: { x: 250, y: 650 },   // Solution Dev
-  n8: { x: 550, y: 350 },   // Quick Fix
-  n9: { x: 400, y: 750 },   // Testing
-  n10: { x: 400, y: 850 },  // Documentation
-  n11: { x: 400, y: 950 }   // Response
+  n1: { x: 400, y: 100 },    // Start
+  n2: { x: 400, y: 200 },   // Initial Triage
+  n3: { x: 200, y: 300 },   // Log Analysis
+  n4: { x: 200, y: 400 },   // Error Check
+  n5: { x: 400, y: 400 },   // Wiki Search
+  n6: { x: 600, y: 400 },   // Code Review
+  n7: { x: 200, y: 500 },   // Solution Dev
+  n8: { x: 400, y: 500 },   // Quick Fix
+  n9: { x: 600, y: 500 },   // Testing
+  n10: { x: 400, y: 600 },  // Documentation
+  n11: { x: 400, y: 700 }   // Response
 };
 
 // Update session paths for more complex flows
@@ -289,6 +289,40 @@ const mockSessionPaths: SessionPaths = {
   '1': ['n1', 'n2', 'n3', 'n4', 'n5', 'n6', 'n7', 'n9', 'n10', 'n11'], // Complex path
   '2': ['n1', 'n2', 'n8', 'n9', 'n10', 'n11'],                          // Quick fix path
   '3': ['n1', 'n2', 'n3', 'n4', 'n8', 'n9', 'n10', 'n11']              // Mixed path
+};
+
+// Add new styling constants
+const STYLES = {
+  node: {
+    default: {
+      radius: 25,
+      fill: 'rgb(99, 102, 241)',
+      stroke: 'rgb(79, 70, 229)',
+      strokeWidth: 2,
+      labelFontSize: 12,
+      labelColor: 'white'
+    },
+    hover: {
+      fill: 'rgb(79, 70, 229)',
+      stroke: 'rgb(67, 56, 202)',
+      strokeWidth: 3
+    },
+    inactive: {
+      fill: 'rgb(209, 213, 219)',
+      stroke: 'rgb(156, 163, 175)'
+    }
+  },
+  edge: {
+    default: {
+      stroke: 'rgb(209, 213, 219)',
+      strokeWidth: 2,
+      markerSize: 4
+    },
+    active: {
+      stroke: 'rgb(99, 102, 241)',
+      strokeWidth: 3
+    }
+  }
 };
 
 function WorkflowGraph() {
@@ -314,7 +348,7 @@ function WorkflowGraph() {
   const viewBoxWidth = viewBox.maxX - viewBox.minX;
   const viewBoxHeight = viewBox.maxY - viewBox.minY;
 
-  // Add effect to handle initial zoom and positioning
+  // Add initial zoom effect
   useEffect(() => {
     const updateGraphPosition = () => {
       if (svgRef.current) {
@@ -326,30 +360,21 @@ function WorkflowGraph() {
         const scaleY = containerHeight / viewBoxHeight;
         
         // Use the smaller scale to ensure the entire graph fits
-        const initialZoom = Math.min(scaleX, scaleY) * 0.9; // 0.9 to add some padding
+        const initialZoom = Math.min(scaleX, scaleY) * 0.8; // Reduced from 0.9 to show more context
         setZoom(initialZoom);
         
-        // Center the graph
+        // Center the graph with slight offset to top
         setPan({
           x: (containerWidth - viewBoxWidth * initialZoom) / 2,
-          y: (containerHeight - viewBoxHeight * initialZoom) / 2
+          y: (containerHeight - viewBoxHeight * initialZoom) / 3
         });
       }
     };
 
-    // Call immediately
     updateGraphPosition();
+    window.addEventListener('resize', updateGraphPosition);
 
-    // Set up a resize observer to handle window/container size changes
-    const resizeObserver = new ResizeObserver(updateGraphPosition);
-    if (svgRef.current) {
-      resizeObserver.observe(svgRef.current);
-    }
-
-    // Cleanup
-    return () => {
-      resizeObserver.disconnect();
-    };
+    return () => window.removeEventListener('resize', updateGraphPosition);
   }, [viewBoxWidth, viewBoxHeight]);
 
   const handleWheel = (e: React.WheelEvent) => {
@@ -423,24 +448,38 @@ function WorkflowGraph() {
   };
 
   const getNodeColor = (nodeId: string) => {
-    if (hoveredNode === nodeId) return 'rgb(79, 70, 229)';
-    if (selectedSessions.length === 0) return 'rgb(99, 102, 241)';
+    if (hoveredNode === nodeId) return STYLES.node.hover.fill;
+    if (selectedSessions.length === 0) return STYLES.node.default.fill;
     
     const isInPath = selectedSessions.some(sessionId => 
       mockSessionPaths[sessionId]?.includes(nodeId)
     );
     
-    return isInPath ? 'rgb(99, 102, 241)' : 'rgb(209, 213, 219)';
+    return isInPath ? STYLES.node.default.fill : STYLES.node.inactive.fill;
   };
 
   const getEdgePath = (start: { x: number; y: number }, end: { x: number; y: number }) => {
-    const controlPoint1 = { x: start.x + (end.x - start.x) / 2, y: start.y };
-    const controlPoint2 = { x: start.x + (end.x - start.x) / 2, y: end.y };
-    return `M ${start.x} ${start.y} C ${controlPoint1.x} ${controlPoint1.y}, ${controlPoint2.x} ${controlPoint2.y}, ${end.x} ${end.y}`;
+    const dx = end.x - start.x;
+    const dy = end.y - start.y;
+    const curve = Math.min(Math.abs(dx), Math.abs(dy)) * 0.5;
+    
+    const controlPoint1 = {
+      x: start.x + Math.sign(dx) * curve,
+      y: start.y + (dy * 0.25)
+    };
+    const controlPoint2 = {
+      x: end.x - Math.sign(dx) * curve,
+      y: end.y - (dy * 0.25)
+    };
+    
+    return `M ${start.x} ${start.y} 
+            C ${controlPoint1.x} ${controlPoint1.y},
+              ${controlPoint2.x} ${controlPoint2.y},
+              ${end.x} ${end.y}`;
   };
 
   const getEdgeColor = (edge: WorkflowEdge) => {
-    if (selectedSessions.length === 0) return 'rgb(209, 213, 219)';
+    if (selectedSessions.length === 0) return STYLES.edge.default.stroke;
     
     const isInPath = selectedSessions.some(sessionId => {
       const path = mockSessionPaths[sessionId];
@@ -454,7 +493,7 @@ function WorkflowGraph() {
       return false;
     });
     
-    return isInPath ? 'rgb(99, 102, 241)' : 'rgb(229, 231, 235)';
+    return isInPath ? STYLES.edge.active.stroke : STYLES.edge.default.stroke;
   };
 
   const handleNodeHover = (nodeId: string | null) => {
@@ -534,7 +573,7 @@ function WorkflowGraph() {
         </div>
       </div>
 
-      {/* Workflow Graph Panel */}
+      {/* Updated Workflow Graph Panel */}
       <div className="flex-1 bg-gray-50 p-6">
         <div className="bg-white rounded-lg shadow-lg p-6 h-full">
           <div className="mb-4 flex justify-between items-center">
@@ -572,7 +611,7 @@ function WorkflowGraph() {
             </div>
           </div>
           <div 
-            className="relative h-[calc(100%-5rem)] border border-gray-200 rounded-lg overflow-hidden"
+            className="relative h-[calc(100%-5rem)] border border-gray-200 rounded-lg overflow-hidden bg-gray-50"
             style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
           >
             <svg
@@ -587,35 +626,54 @@ function WorkflowGraph() {
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseUp}
             >
+              <defs>
+                <marker
+                  id="arrowhead"
+                  markerWidth="10"
+                  markerHeight="7"
+                  refX="9"
+                  refY="3.5"
+                  orient="auto"
+                >
+                  <polygon
+                    points="0 0, 10 3.5, 0 7"
+                    fill={STYLES.edge.default.stroke}
+                  />
+                </marker>
+              </defs>
               <g transform={`translate(${pan.x},${pan.y}) scale(${zoom})`}>
-                {/* Render edges */}
+                {/* Render edges with new styling */}
                 {mockEdges.map((edge) => {
                   const startPos = nodePositions[edge.source];
                   const endPos = nodePositions[edge.target];
+                  const edgeColor = getEdgeColor(edge);
                   return (
                     <g key={`${edge.source}-${edge.target}`}>
                       <path
                         d={getEdgePath(startPos, endPos)}
-                        stroke={getEdgeColor(edge)}
-                        strokeWidth={2}
+                        stroke={edgeColor}
+                        strokeWidth={edge.frequency * STYLES.edge.default.strokeWidth}
                         fill="none"
                         className="transition-colors duration-300"
+                        markerEnd="url(#arrowhead)"
                       />
-                      {/* Edge frequency indicator */}
-                      <circle
-                        cx={(startPos.x + endPos.x) / 2}
-                        cy={(startPos.y + endPos.y) / 2}
-                        r={4}
-                        fill={getEdgeColor(edge)}
-                        className="transition-colors duration-300"
-                      />
+                      {edge.frequency > 0.5 && (
+                        <circle
+                          cx={(startPos.x + endPos.x) / 2}
+                          cy={(startPos.y + endPos.y) / 2}
+                          r={STYLES.edge.default.markerSize}
+                          fill={edgeColor}
+                          className="transition-colors duration-300"
+                        />
+                      )}
                     </g>
                   );
                 })}
                 
-                {/* Render nodes */}
+                {/* Render nodes with new styling */}
                 {mockNodes.map((node) => {
                   const pos = nodePositions[node.id];
+                  const isHovered = hoveredNode === node.id;
                   return (
                     <g
                       key={node.id}
@@ -626,18 +684,29 @@ function WorkflowGraph() {
                       className="cursor-pointer"
                     >
                       <circle
-                        r={20}
+                        r={STYLES.node.default.radius}
                         fill={getNodeColor(node.id)}
-                        className="transition-colors duration-300"
+                        stroke={isHovered ? STYLES.node.hover.stroke : STYLES.node.default.stroke}
+                        strokeWidth={isHovered ? STYLES.node.hover.strokeWidth : STYLES.node.default.strokeWidth}
+                        className="transition-all duration-300"
                       />
                       <text
                         textAnchor="middle"
-                        dy=".3em"
-                        fill="white"
-                        fontSize={10}
-                        className="pointer-events-none"
+                        dy="-0.5em"
+                        fill={STYLES.node.default.labelColor}
+                        fontSize={STYLES.node.default.labelFontSize}
+                        className="pointer-events-none font-medium"
                       >
-                        {node.label.split(' ')[0]}
+                        {node.label}
+                      </text>
+                      <text
+                        textAnchor="middle"
+                        dy="1.5em"
+                        fill={STYLES.node.default.labelColor}
+                        fontSize={STYLES.node.default.labelFontSize - 2}
+                        className="pointer-events-none opacity-75"
+                      >
+                        {formatDuration(node.timeSpent)}
                       </text>
                     </g>
                   );

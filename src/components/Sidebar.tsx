@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { LayoutDashboard, LineChart, Wand2, Users, Cable, ShieldCheck, Settings, GitGraph } from 'lucide-react';
 
 interface SidebarProps {
@@ -31,12 +32,14 @@ function Sidebar({ currentView, onViewChange, onCopilotToggle, showCopilot }: Si
   return (
     <div className="fixed inset-y-0 left-0 w-64 bg-[#1a1f2b]">
       <div className="p-6">
-        <div className="flex items-center mb-8 hover:opacity-80 transition-opacity">
-          <div className="w-8 h-8 mr-3 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
-            T5
-          </div>
+        <Link to="/" className="flex items-center mb-8 hover:opacity-80 transition-opacity">
+          <img 
+            src="tp5logo.jpeg" 
+            alt="Tier.5 Logo" 
+            className="w-8 h-8 mr-3"
+          />
           <h1 className="text-xl font-bold text-white">Tier.5</h1>
-        </div>
+        </Link>
         <nav>
           <ul className="space-y-1">
             {menuItems.map((item) => (
