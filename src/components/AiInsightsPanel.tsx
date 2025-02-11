@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { X, MessageSquare, Lightbulb, TrendingUp } from 'lucide-react';
 
 const AiInsightsPanel: React.FC = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const insights = [
     {
