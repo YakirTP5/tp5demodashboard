@@ -13,6 +13,7 @@ function App() {
   const [currentView, setCurrentView] = useState<'dashboard' | 'analysis' | 'workflow'>('dashboard');
   const [showCopilot, setShowCopilot] = useState(false);
 
+  
   return (
     <AppProvider>
       <div className="flex min-h-screen bg-[#1a1f2b]">
