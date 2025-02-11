@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { LayoutDashboard, LineChart, Wand2, Users, Cable, ShieldCheck, Settings } from 'lucide-react';
+import { LayoutDashboard, LineChart, Wand2, Users, Cable, ShieldCheck, Settings, GitGraph } from 'lucide-react';
 import Sidebar from './components/Sidebar';
 import TopSection from './components/TopSection';
 import MainSection from './components/MainSection';
 import TaskAnalysis from './components/TaskAnalysis';
 import AiInsightsPanel from './components/AiInsightsPanel';
-import AiCopilot from './components/AiCopilot';
-import WorkflowGraph from './components/WorkflowGraph';
+import ProcessMapPage from './pages/ProcessMapPage';
 import { AppProvider } from './context/AppContext';
 
 function App() {
-  const [currentView, setCurrentView] = useState<'dashboard' | 'analysis' | 'workflow'>('dashboard');
+  const [currentView, setCurrentView] = useState<'dashboard' | 'analysis' | 'process'>('dashboard');
   const [showCopilot, setShowCopilot] = useState(false);
 
   return (
@@ -34,12 +33,11 @@ function App() {
               ) : currentView === 'analysis' ? (
                 <TaskAnalysis />
               ) : (
-                <WorkflowGraph />
+                <ProcessMapPage />
               )}
             </div>
           </main>
           <AiInsightsPanel />
-          {showCopilot && <AiCopilot />}
         </div>
       </AppProvider>
     </BrowserRouter>
