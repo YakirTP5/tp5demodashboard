@@ -314,6 +314,44 @@ function WorkflowGraph() {
   const viewBoxWidth = viewBox.maxX - viewBox.minX;
   const viewBoxHeight = viewBox.maxY - viewBox.minY;
 
+  // Add effect to handle initial zoom and positioning
+  useEffect(() => {
+    const updateGraphPosition = () => {
+      if (svgRef.current) {
+        const containerWidth = svgRef.current.clientWidth;
+        const containerHeight = svgRef.current.clientHeight;
+        
+        // Calculate scale needed to fit the graph in both dimensions
+        const scaleX = containerWidth / viewBoxWidth;
+        const scaleY = containerHeight / viewBoxHeight;
+        
+        // Use the smaller scale to ensure the entire graph fits
+        const initialZoom = Math.min(scaleX, scaleY) * 0.9; // 0.9 to add some padding
+        setZoom(initialZoom);
+        
+        // Center the graph
+        setPan({
+          x: (containerWidth - viewBoxWidth * initialZoom) / 2,
+          y: (containerHeight - viewBoxHeight * initialZoom) / 2
+        });
+      }
+    };
+
+    // Call immediately
+    updateGraphPosition();
+
+    // Set up a resize observer to handle window/container size changes
+    const resizeObserver = new ResizeObserver(updateGraphPosition);
+    if (svgRef.current) {
+      resizeObserver.observe(svgRef.current);
+    }
+
+    // Cleanup
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [viewBoxWidth, viewBoxHeight]);
+
   const handleWheel = (e: React.WheelEvent) => {
     e.preventDefault();
     const delta = e.deltaY > 0 ? 0.9 : 1.1;
@@ -559,7 +597,7 @@ function WorkflowGraph() {
                       <path
                         d={getEdgePath(startPos, endPos)}
                         stroke={getEdgeColor(edge)}
-                        strokeWidth={2 / zoom}
+                        strokeWidth={2}
                         fill="none"
                         className="transition-colors duration-300"
                       />
@@ -567,7 +605,7 @@ function WorkflowGraph() {
                       <circle
                         cx={(startPos.x + endPos.x) / 2}
                         cy={(startPos.y + endPos.y) / 2}
-                        r={4 / zoom}
+                        r={4}
                         fill={getEdgeColor(edge)}
                         className="transition-colors duration-300"
                       />
@@ -588,7 +626,7 @@ function WorkflowGraph() {
                       className="cursor-pointer"
                     >
                       <circle
-                        r={30 / zoom}
+                        r={20}
                         fill={getNodeColor(node.id)}
                         className="transition-colors duration-300"
                       />
@@ -596,7 +634,7 @@ function WorkflowGraph() {
                         textAnchor="middle"
                         dy=".3em"
                         fill="white"
-                        fontSize={12 / zoom}
+                        fontSize={10}
                         className="pointer-events-none"
                       >
                         {node.label.split(' ')[0]}

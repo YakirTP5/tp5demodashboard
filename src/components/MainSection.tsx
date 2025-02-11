@@ -3,21 +3,70 @@ import { ChevronRight, ChevronDown, Clock, Users as UsersIcon, Zap, PenTool as T
 import { useApp } from '../context/AppContext';
 
 function MainSection() {
-  const { tasks, workflows, sessions, loading, error } = useApp();
+  const { tasks: originalTasks, workflows: originalWorkflows, sessions: originalSessions, loading, error } = useApp();
   const [expandedTasks, setExpandedTasks] = useState<string[]>([]);
   const [expandedWorkflows, setExpandedWorkflows] = useState<string[]>([]);
+  const [randomizedData, setRandomizedData] = useState({
+    tasks: originalTasks,
+    workflows: originalWorkflows,
+    sessions: originalSessions
+  });
 
+  // Function to add random variation to numeric values
+  const addRandomVariation = (value: number, variationPercent: number = 20): number => {
+    const variation = (Math.random() - 0.5) * 2 * (value * (variationPercent / 100));
+    return Math.max(0, value + variation);
+  };
+
+  // Randomize data periodically
   useEffect(() => {
-    console.log('MainSection - Current State:', {
-      tasksCount: tasks.length,
-      workflowsCount: workflows.length,
-      sessionsCount: sessions.length,
-      expandedTasks,
-      expandedWorkflows,
-      loading,
-      error
-    });
-  }, [tasks, workflows, sessions, expandedTasks, expandedWorkflows, loading, error]);
+    const randomizeData = () => {
+      const randomizedTasks = originalTasks.map(task => ({
+        ...task,
+        totalTimeSpent: addRandomVariation(task.totalTimeSpent),
+        opsCost: addRandomVariation(task.opsCost),
+        automationScore: Math.min(100, addRandomVariation(task.automationScore, 10)),
+        blunderTime: addRandomVariation(task.blunderTime),
+        blunderCost: addRandomVariation(task.blunderCost)
+      }));
+
+      const randomizedWorkflows = originalWorkflows.map(workflow => ({
+        ...workflow,
+        timeSpent: addRandomVariation(workflow.timeSpent),
+        cost: addRandomVariation(workflow.cost),
+        automation_metrics: {
+          automation_score: Math.min(100, addRandomVariation(workflow.automation_metrics?.automation_score || 0, 10)),
+          manual_steps: workflow.automation_metrics?.manual_steps || 0,
+          automated_steps: workflow.automation_metrics?.automated_steps || 0,
+          ai_assisted_steps: workflow.automation_metrics?.ai_assisted_steps || 0
+        }
+      }));
+
+      const randomizedSessions = originalSessions.map(session => ({
+        ...session,
+        duration: addRandomVariation(session.duration),
+        cost: addRandomVariation(session.cost),
+        automation_metrics: {
+          ...session.automation_metrics,
+          automation_score: Math.min(100, addRandomVariation(session.automation_metrics.automation_score, 10))
+        }
+      }));
+
+      setRandomizedData({
+        tasks: randomizedTasks,
+        workflows: randomizedWorkflows,
+        sessions: randomizedSessions
+      });
+    };
+
+    // Initial randomization
+    randomizeData();
+
+    // Set up interval for periodic randomization
+    const interval = setInterval(randomizeData, 5000); // Randomize every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [originalTasks, originalWorkflows, originalSessions]);
 
   const toggleTask = (taskId: string) => {
     console.log(`🔄 Toggling task ${taskId}`);
@@ -152,12 +201,12 @@ function MainSection() {
         </div>
       </div>
 
-      {tasks.length === 0 ? (
+      {randomizedData.tasks.length === 0 ? (
         <div className="text-center py-12 bg-white rounded-lg shadow">
           <p className="text-gray-500">No tasks available</p>
         </div>
       ) : (
-        tasks.map((task) => (
+        randomizedData.tasks.map((task) => (
           <div key={task.id} className="bg-white shadow rounded-lg overflow-hidden">
             {/* Task Level */}
             <div className="p-6">
@@ -180,7 +229,7 @@ function MainSection() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="text-sm text-gray-500">
-                    {workflows.filter(w => w.taskId === task.taskId).length} workflows
+                    {randomizedData.workflows.filter(w => w.taskId === task.taskId).length} workflows
                   </span>
                 </div>
               </div>
@@ -190,7 +239,7 @@ function MainSection() {
             {/* Workflow Level */}
             {expandedTasks.includes(task.id) && (
               <div className="mt-2">
-                {workflows
+                {randomizedData.workflows
                   .filter((wf) => wf.taskId === task.taskId)
                   .map((workflow) => (
                     <div key={workflow.id} className="mx-4 mb-4">
@@ -220,7 +269,7 @@ function MainSection() {
                         {/* Sessions Level */}
                         {expandedWorkflows.includes(workflow.id) && (
                           <div className="border-t border-gray-200">
-                            {sessions
+                            {randomizedData.sessions
                               .filter((sess) => sess.workflowId === workflow.workflowId)
                               .map((session) => (
                                 <div key={session.id} className="p-4 bg-white border-b border-gray-100 last:border-b-0">

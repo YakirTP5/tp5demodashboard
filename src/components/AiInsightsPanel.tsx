@@ -80,83 +80,81 @@ function AiInsightsPanel() {
   };
 
   return (
-    <div className={`bg-white border-l border-gray-200 h-screen transition-all duration-300 ease-in-out ${
-      isOpen ? 'w-80' : 'w-12'
-    }`}>
-      <div className="flex items-center h-16 px-4 border-b border-gray-200">
-        <div className={`flex-1 transition-opacity duration-300 ${
-          isOpen ? 'opacity-100' : 'opacity-0'
-        }`}>
-          <div className="flex items-center space-x-2">
-            <Brain className="h-6 w-6 text-indigo-600" />
-            <h2 className="text-lg font-medium text-gray-900">AI Insights</h2>
+    <div className={`fixed right-0 top-0 flex h-screen transition-all duration-300 ease-in-out`}>
+      <button
+        onClick={() => setIsOpen(prev => !prev)}
+        className="h-12 w-12 flex items-center justify-center bg-white border-t border-b border-l border-gray-200 text-gray-500 hover:text-gray-700 transition-colors mt-4 rounded-l-lg shadow-sm"
+        title={isOpen ? 'Close panel' : 'Open panel'}
+      >
+        <Brain className="h-6 w-6 text-indigo-600" />
+      </button>
+
+      <div className={`bg-white border-l border-gray-200 h-screen transition-all duration-300 ease-in-out ${
+        isOpen ? 'w-80' : 'w-0'
+      }`}>
+        <div className="flex items-center h-16 px-4 border-b border-gray-200">
+          <div className={`flex-1 transition-opacity duration-300 ${
+            isOpen ? 'opacity-100' : 'opacity-0'
+          }`}>
+            <div className="flex items-center">
+              <h2 className="text-lg font-medium text-gray-900">AI Insights</h2>
+            </div>
           </div>
         </div>
-        <button
-          onClick={() => setIsOpen(prev => !prev)}
-          className="text-gray-500 hover:text-gray-700 transition-colors"
-          title={isOpen ? 'Close panel' : 'Open panel'}
-        >
-          {isOpen ? (
-            <ChevronRightCircle className="h-6 w-6" />
-          ) : (
-            <ChevronLeftCircle className="h-6 w-6" />
-          )}
-        </button>
-      </div>
 
-      <div className={`transition-opacity duration-300 ${
-        isOpen ? 'opacity-100' : 'opacity-0'
-      }`}>
-        {isOpen && (
-          <div className="p-4 space-y-4 overflow-y-auto h-[calc(100vh-4rem)]">
-            {mockInsights.map((insight) => (
-              <div
-                key={insight.id}
-                className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow"
-              >
-                <div className="flex items-start space-x-3">
-                  {getInsightIcon(insight.type)}
-                  <div className="flex-1">
-                    <h3 className="text-sm font-medium text-gray-900">{insight.title}</h3>
-                    <p className="mt-1 text-sm text-gray-500">{insight.description}</p>
-                    
-                    {insight.potentialSavings && (
-                      <div className="mt-2 flex items-center space-x-4 text-sm">
-                        <div className="flex items-center text-gray-500">
-                          <Clock className="h-4 w-4 mr-1" />
-                          <span>{insight.potentialSavings.time}h saved</span>
+        <div className={`transition-opacity duration-300 ${
+          isOpen ? 'opacity-100' : 'opacity-0'
+        }`}>
+          {isOpen && (
+            <div className="p-4 space-y-4 overflow-y-auto h-[calc(100vh-4rem)]">
+              {mockInsights.map((insight) => (
+                <div
+                  key={insight.id}
+                  className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow"
+                >
+                  <div className="flex items-start space-x-3">
+                    {getInsightIcon(insight.type)}
+                    <div className="flex-1">
+                      <h3 className="text-sm font-medium text-gray-900">{insight.title}</h3>
+                      <p className="mt-1 text-sm text-gray-500">{insight.description}</p>
+                      
+                      {insight.potentialSavings && (
+                        <div className="mt-2 flex items-center space-x-4 text-sm">
+                          <div className="flex items-center text-gray-500">
+                            <Clock className="h-4 w-4 mr-1" />
+                            <span>{insight.potentialSavings.time}h saved</span>
+                          </div>
+                          <div className="flex items-center text-gray-500">
+                            <span>${insight.potentialSavings.cost} saved</span>
+                          </div>
                         </div>
-                        <div className="flex items-center text-gray-500">
-                          <span>${insight.potentialSavings.cost} saved</span>
-                        </div>
-                      </div>
-                    )}
+                      )}
 
-                    <div className="mt-3 flex items-center space-x-3">
-                      {insight.videoTimestamp && (
+                      <div className="mt-3 flex items-center space-x-3">
+                        {insight.videoTimestamp && (
+                          <button
+                            onClick={() => handleVideoReplay(insight.videoTimestamp!)}
+                            className="inline-flex items-center text-sm text-indigo-600 hover:text-indigo-500"
+                          >
+                            <Play className="h-4 w-4 mr-1" />
+                            Watch Replay
+                          </button>
+                        )}
                         <button
-                          onClick={() => handleVideoReplay(insight.videoTimestamp!)}
+                          onClick={() => handleCompareWorkflow(insight.id)}
                           className="inline-flex items-center text-sm text-indigo-600 hover:text-indigo-500"
                         >
-                          <Play className="h-4 w-4 mr-1" />
-                          Watch Replay
+                          <ArrowRight className="h-4 w-4 mr-1" />
+                          Compare Workflow
                         </button>
-                      )}
-                      <button
-                        onClick={() => handleCompareWorkflow(insight.id)}
-                        className="inline-flex items-center text-sm text-indigo-600 hover:text-indigo-500"
-                      >
-                        <ArrowRight className="h-4 w-4 mr-1" />
-                        Compare Workflow
-                      </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

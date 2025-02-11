@@ -1,11 +1,12 @@
-import React, { useMemo } from 'react';
-import { Line } from 'react-chartjs-2';
+import React, { useMemo, useState } from 'react';
+import { Line, Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
@@ -15,6 +16,7 @@ import {
   ScaleOptionsByType,
   CartesianScaleTypeRegistry,
 } from 'chart.js';
+import { BarChart2, LineChart as LineChartIcon, Calendar } from 'lucide-react';
 import metricsData from '../data/metrics.json';
 
 // Register ChartJS components
@@ -23,6 +25,7 @@ ChartJS.register(
   LinearScale,
   PointElement,
   LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend
@@ -125,6 +128,8 @@ interface TrendChartProps {
   timeRange: string;
 }
 
+type ComparisonPeriod = 'year' | 'month' | 'week';
+
 function getDefaultTimeRange(): number {
   return 30; // Default to 30 days if no filter is selected
 }
@@ -136,6 +141,8 @@ function getDaysFromRange(range: string | undefined): number {
 }
 
 function TrendChart({ metric, data, timeRange }: TrendChartProps) {
+  const [chartType, setChartType] = useState<'line' | 'bar'>('line');
+  const [comparisonPeriod, setComparisonPeriod] = useState<ComparisonPeriod>('month');
   const selectedDays = getDaysFromRange(timeRange);
   const daysRatio = selectedDays / getDefaultTimeRange();
 
@@ -216,7 +223,63 @@ function TrendChart({ metric, data, timeRange }: TrendChartProps) {
     };
   }, [metric, selectedDays]);
 
-  const options: ChartOptions<'line'> = {
+  // Generate comparison bar chart data
+  const barChartData = useMemo(() => {
+    const currentMetric = typedMetricsData.metrics.current[metric];
+    const historicalMetric = typedMetricsData.metrics.historical[metric];
+
+    if (!currentMetric || !historicalMetric) {
+      return {
+        labels: [],
+        datasets: []
+      };
+    }
+
+    // Generate comparison data based on selected period
+    const periods = {
+      year: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      month: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      week: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    };
+
+    const labels = periods[comparisonPeriod];
+    const baseValue = currentMetric.value * (selectedDays / 30);
+    const previousValue = historicalMetric.baseline * (selectedDays / 30);
+
+    // Generate current period data
+    const currentData = labels.map(() => {
+      const variation = (Math.random() - 0.5) * (historicalMetric.variance * 0.1);
+      return baseValue + variation;
+    });
+
+    // Generate previous period data
+    const previousData = labels.map(() => {
+      const variation = (Math.random() - 0.5) * (historicalMetric.variance * 0.1);
+      return previousValue + variation;
+    });
+
+    return {
+      labels,
+      datasets: [
+        {
+          label: 'Current Period',
+          data: currentData,
+          backgroundColor: 'rgba(99, 102, 241, 0.8)',
+          borderColor: 'rgb(99, 102, 241)',
+          borderWidth: 1,
+        },
+        {
+          label: `Previous ${comparisonPeriod.charAt(0).toUpperCase() + comparisonPeriod.slice(1)}`,
+          data: previousData,
+          backgroundColor: 'rgba(156, 163, 175, 0.5)',
+          borderColor: 'rgb(156, 163, 175)',
+          borderWidth: 1,
+        },
+      ],
+    };
+  }, [metric, selectedDays, comparisonPeriod]);
+
+  const options: ChartOptions<'line' | 'bar'> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
@@ -288,8 +351,54 @@ function TrendChart({ metric, data, timeRange }: TrendChartProps) {
   };
 
   return (
-    <div className="w-full h-[300px]">
-      <Line data={chartData} options={options} />
+    <div className="w-full">
+      <div className="flex items-center justify-end space-x-4 mb-4">
+        <div className="flex items-center space-x-2 bg-gray-100 rounded-lg p-1">
+          <button
+            onClick={() => setChartType('line')}
+            className={`p-2 rounded-md transition-colors ${
+              chartType === 'line' 
+                ? 'bg-white text-indigo-600 shadow-sm' 
+                : 'text-gray-600 hover:text-indigo-600'
+            }`}
+            title="Line Chart"
+          >
+            <LineChartIcon className="h-4 w-4" />
+          </button>
+          <button
+            onClick={() => setChartType('bar')}
+            className={`p-2 rounded-md transition-colors ${
+              chartType === 'bar' 
+                ? 'bg-white text-indigo-600 shadow-sm' 
+                : 'text-gray-600 hover:text-indigo-600'
+            }`}
+            title="Bar Chart"
+          >
+            <BarChart2 className="h-4 w-4" />
+          </button>
+        </div>
+        {chartType === 'bar' && (
+          <div className="flex items-center space-x-2">
+            <Calendar className="h-4 w-4 text-gray-400" />
+            <select
+              value={comparisonPeriod}
+              onChange={(e) => setComparisonPeriod(e.target.value as ComparisonPeriod)}
+              className="text-sm border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+            >
+              <option value="week">Week over Week</option>
+              <option value="month">Month over Month</option>
+              <option value="year">Year over Year</option>
+            </select>
+          </div>
+        )}
+      </div>
+      <div className="h-[300px]">
+        {chartType === 'line' ? (
+          <Line data={chartData} options={options} />
+        ) : (
+          <Bar data={barChartData} options={options} />
+        )}
+      </div>
     </div>
   );
 }

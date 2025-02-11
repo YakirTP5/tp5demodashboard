@@ -11,7 +11,9 @@ import {
   AppWindow,
   Hash,
   Search,
-  LucideIcon 
+  LucideIcon,
+  ChevronRight,
+  CalendarRange
 } from 'lucide-react';
 import TrendChart from './TrendChart';
 import { useApp } from '../context/AppContext';
@@ -224,6 +226,8 @@ function TopSection() {
   const { tasks, sessions, workflows, loading, error } = useApp();
   const [selectedKPI, setSelectedKPI] = useState<KPI>(defaultKPIs[0]);
   const [kpis, setKpis] = useState<KPI[]>(defaultKPIs);
+  const [showTimeDropdown, setShowTimeDropdown] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   
   // Initialize filter values with defaults from mock data
   const [filterValues, setFilterValues] = useState<FilterState>(() => {
@@ -257,6 +261,25 @@ function TopSection() {
     let filteredTasks = [...tasks];
     let filteredWorkflows = [...workflows];
     let filteredSessions = [...sessions];
+
+    // Apply search filter first
+    if (searchTerm) {
+      const term = searchTerm.toLowerCase();
+      filteredTasks = filteredTasks.filter(t => 
+        t.name.toLowerCase().includes(term) ||
+        t.tags.some(tag => tag.toLowerCase().includes(term)) ||
+        t.apps.some(app => app.toLowerCase().includes(term))
+      );
+      filteredWorkflows = filteredWorkflows.filter(w => 
+        w.name.toLowerCase().includes(term) ||
+        w.tags.some(tag => tag.toLowerCase().includes(term)) ||
+        w.apps.some(app => app.toLowerCase().includes(term)) ||
+        filteredTasks.some(t => t.taskId === w.taskId)
+      );
+      filteredSessions = filteredSessions.filter(s =>
+        filteredWorkflows.some(w => w.workflowId === s.workflowId)
+      );
+    }
 
     // Apply task filter
     if (filterValues['Task']) {
@@ -312,31 +335,12 @@ function TopSection() {
       );
     }
 
-    // Apply search filter
-    if (filterValues['Search']) {
-      const searchTerm = filterValues['Search'].toLowerCase();
-      filteredTasks = filteredTasks.filter(t => 
-        t.name.toLowerCase().includes(searchTerm) ||
-        t.tags.some(tag => tag.toLowerCase().includes(searchTerm)) ||
-        t.apps.some(app => app.toLowerCase().includes(searchTerm))
-      );
-      filteredWorkflows = filteredWorkflows.filter(w => 
-        w.name.toLowerCase().includes(searchTerm) ||
-        w.tags.some(tag => tag.toLowerCase().includes(searchTerm)) ||
-        w.apps.some(app => app.toLowerCase().includes(searchTerm)) ||
-        filteredTasks.some(t => t.taskId === w.taskId)
-      );
-      filteredSessions = filteredSessions.filter(s =>
-        filteredWorkflows.some(w => w.workflowId === s.workflowId)
-      );
-    }
-
     return {
       tasks: filteredTasks,
       workflows: filteredWorkflows,
       sessions: filteredSessions
     };
-  }, [tasks, workflows, sessions, filterValues]);
+  }, [tasks, workflows, sessions, filterValues, searchTerm]);
 
   // Update KPIs based on filtered data and automation metrics
   useEffect(() => {
@@ -384,6 +388,15 @@ function TopSection() {
     }));
   }, [filteredData, filterValues]);
 
+  // Update the time range filter click handlers
+  const handleTimeRangeSelect = (range: string) => {
+    setFilterValues(prev => ({
+      ...prev,
+      'Last X Days': range
+    }));
+    setShowTimeDropdown(false);
+  };
+
   const handleFilterChange = (filterName: string, value: string) => {
     setFilterValues(prev => ({
       ...prev,
@@ -418,29 +431,135 @@ function TopSection() {
 
   return (
     <div className="space-y-6">
+      {/* Global Search Bar */}
+      <div className="bg-white rounded-lg shadow">
+        <div className="px-6 py-4">
+          <h2 className="text-sm font-medium text-gray-700 mb-2">AI Search builder</h2>
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search for tasks, workflows, and more"
+              className="w-full pl-4 pr-12 py-2.5 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <button className="absolute right-1 top-1 p-1.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+              <Search className="h-5 w-5" />
+            </button>
+          </div>
+          <div className="mt-1.5">
+            <span className="text-sm text-gray-500">
+              Example: <span className="text-gray-600">AI workflows in Customer Support that got optimized in the last 30 days</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
       {/* Filters */}
       <div className="bg-white rounded-lg shadow p-6">
         <h2 className="text-lg font-medium text-gray-900 mb-4">Filters</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {/* Search Input */}
-          <div className="relative lg:col-span-2">
+          {/* Time Range Filter */}
+          <div className="lg:col-span-2 relative group">
             <div className="relative">
-              <input
-                type="text"
-                className="block w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 bg-white"
-                placeholder={typedFiltersData.dynamic_filters.search.placeholder}
-                value={filterValues['Search'] || ''}
-                onChange={(e) => handleFilterChange('Search', e.target.value)}
-              />
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="h-4 w-4 text-gray-400" />
-              </div>
+              <button
+                onClick={() => setShowTimeDropdown(!showTimeDropdown)}
+                className="w-full flex items-center justify-between px-4 py-2 text-sm border border-gray-300 rounded-md hover:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
+              >
+                <div className="flex items-center space-x-2">
+                  <CalendarRange className="h-4 w-4 text-gray-400" />
+                  <span>{filterValues['Last X Days'] || 'Select time range'}</span>
+                </div>
+                <ChevronDown className="h-4 w-4 text-gray-400" />
+              </button>
+
+              {/* Time Range Dropdown */}
+              {showTimeDropdown && (
+                <div className="absolute z-10 mt-1 w-full bg-white rounded-md shadow-lg border border-gray-200">
+                  <div className="p-2 space-y-1">
+                    {/* Preset Ranges */}
+                    <div className="px-2 py-1.5 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Preset Ranges
+                    </div>
+                    <button
+                      onClick={() => handleTimeRangeSelect('Last 7 days')}
+                      className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 rounded-md"
+                    >
+                      Last 7 days
+                    </button>
+                    <button
+                      onClick={() => handleTimeRangeSelect('Last 30 days')}
+                      className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 rounded-md"
+                    >
+                      Last 30 days
+                    </button>
+                    <button
+                      onClick={() => handleTimeRangeSelect('Last 90 days')}
+                      className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 rounded-md"
+                    >
+                      Last 90 days
+                    </button>
+
+                    {/* Common Ranges */}
+                    <div className="border-t border-gray-100 my-2"></div>
+                    <div className="px-2 py-1.5 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Common Ranges
+                    </div>
+                    <button
+                      onClick={() => handleTimeRangeSelect('This week')}
+                      className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 rounded-md flex items-center justify-between"
+                    >
+                      <span>This week</span>
+                      <ChevronRight className="h-4 w-4 text-gray-400" />
+                    </button>
+                    <button
+                      onClick={() => handleTimeRangeSelect('This month')}
+                      className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 rounded-md flex items-center justify-between"
+                    >
+                      <span>This month</span>
+                      <ChevronRight className="h-4 w-4 text-gray-400" />
+                    </button>
+                    <button
+                      onClick={() => handleTimeRangeSelect('This quarter')}
+                      className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 rounded-md flex items-center justify-between"
+                    >
+                      <span>This quarter</span>
+                      <ChevronRight className="h-4 w-4 text-gray-400" />
+                    </button>
+
+                    {/* Custom Range */}
+                    <div className="border-t border-gray-100 my-2"></div>
+                    <div className="px-2 py-1.5 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Custom Range
+                    </div>
+                    <div className="p-2 space-y-2">
+                      <div className="flex items-center space-x-2">
+                        <input
+                          type="date"
+                          className="flex-1 px-2 py-1 text-sm border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                        />
+                        <span className="text-gray-500">to</span>
+                        <input
+                          type="date"
+                          className="flex-1 px-2 py-1 text-sm border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                        />
+                      </div>
+                      <button
+                        onClick={() => setShowTimeDropdown(false)}
+                        className="w-full px-4 py-2 text-sm bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+                      >
+                        Apply custom range
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
-          {/* Dropdown Filters */}
+          {/* Other Dropdown Filters */}
           {dynamicFilters.map((filter) => (
-            filter.id !== 'search' && (
+            filter.id !== 'search' && filter.name !== 'Last X Days' && (
               <div key={filter.id} className="relative">
                 <div className="relative">
                   <select
@@ -517,9 +636,6 @@ function TopSection() {
           />
         </div>
       </div>
-
-
-
     </div>
   );
 }

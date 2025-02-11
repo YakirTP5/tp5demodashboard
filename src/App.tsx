@@ -15,24 +15,26 @@ function App() {
 
   return (
     <AppProvider>
-      <div className="flex h-screen bg-gray-50">
+      <div className="flex min-h-screen bg-[#1a1f2b]">
         <Sidebar 
           onViewChange={setCurrentView} 
           currentView={currentView}
           onCopilotToggle={() => setShowCopilot(prev => !prev)}
           showCopilot={showCopilot}
         />
-        <main className="flex-1 overflow-auto">
-          {currentView === 'dashboard' ? (
-            <div className="container mx-auto px-6 py-8">
-              <TopSection />
-              <MainSection />
-            </div>
-          ) : currentView === 'analysis' ? (
-            <TaskAnalysis />
-          ) : (
-            <WorkflowGraph />
-          )}
+        <main className="flex-1 ml-64">
+          <div className="min-h-screen bg-gray-50/95">
+            {currentView === 'dashboard' ? (
+              <div className="container mx-auto px-6 py-8">
+                <TopSection />
+                <MainSection />
+              </div>
+            ) : currentView === 'analysis' ? (
+              <TaskAnalysis />
+            ) : (
+              <WorkflowGraph />
+            )}
+          </div>
         </main>
         <AiInsightsPanel />
         {showCopilot && <AiCopilot />}
