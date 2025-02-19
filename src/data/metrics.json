@@ -1,73 +1,73 @@
 {
   "metrics": {
     "current": {
-      "ops_hours": {
-        "value": 2345,
-        "trend": 8.3,
-        "trend_direction": "down"
+      "total_tickets": {
+        "value": 2450,
+        "trend": 15.5,
+        "trend_direction": "up"
       },
-      "analysis_time": {
-        "value": 45,
+      "cost_per_ticket": {
+        "value": 85,
         "trend": 12.5,
         "trend_direction": "down"
       },
-      "ops_cost": {
-        "value": 12500,
-        "trend": 15.4,
-        "trend_direction": "down"
+      "ai_resolution_rate": {
+        "value": 45,
+        "trend": 25.4,
+        "trend_direction": "up"
       },
-      "blunder_time": {
-        "value": 234,
-        "trend": 18.7,
-        "trend_direction": "down"
+      "ai_cost_savings": {
+        "value": 15500,
+        "trend": 32.3,
+        "trend_direction": "up"
       },
-      "automation": {
+      "automation_rate": {
         "value": 67,
         "trend": 22.5,
         "trend_direction": "up"
       },
-      "high_severity": {
-        "value": 23,
-        "trend": 25.8,
-        "trend_direction": "down"
+      "process_compliance": {
+        "value": 92,
+        "trend": 3.8,
+        "trend_direction": "up"
       }
     },
     "historical": {
-      "ops_hours": {
-        "baseline": 2500,
+      "total_tickets": {
+        "baseline": 2000,
         "variance": 200,
-        "min": 2000,
-        "max": 2700
+        "min": 1800,
+        "max": 2800
       },
-      "analysis_time": {
-        "baseline": 50,
-        "variance": 5,
-        "min": 35,
+      "cost_per_ticket": {
+        "baseline": 95,
+        "variance": 15,
+        "min": 75,
+        "max": 120
+      },
+      "ai_resolution_rate": {
+        "baseline": 35,
+        "variance": 8,
+        "min": 25,
         "max": 55
       },
-      "ops_cost": {
-        "baseline": 13500,
-        "variance": 1000,
-        "min": 11000,
-        "max": 14000
+      "ai_cost_savings": {
+        "baseline": 12000,
+        "variance": 2000,
+        "min": 10000,
+        "max": 18000
       },
-      "blunder_time": {
-        "baseline": 280,
-        "variance": 30,
-        "min": 180,
-        "max": 280
-      },
-      "automation": {
+      "automation_rate": {
         "baseline": 60,
         "variance": 8,
         "min": 55,
         "max": 85
       },
-      "high_severity": {
-        "baseline": 28,
-        "variance": 5,
-        "min": 15,
-        "max": 30
+      "process_compliance": {
+        "baseline": 90,
+        "variance": 3,
+        "min": 85,
+        "max": 95
       }
     }
   }

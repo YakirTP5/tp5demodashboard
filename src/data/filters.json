@@ -1,101 +1,91 @@
 {
   "filters": {
-    "time_range": {
+    "timeRange": {
       "name": "Last X Days",
       "icon": "Calendar",
       "default": "Last 30 days",
       "options": [
         "Last 7 days",
         "Last 30 days",
-        "Last 90 days"
+        "Last 90 days",
+        "This quarter",
+        "This year"
       ]
     },
-    "communication": {
-      "name": "Channel",
-      "icon": "MessageSquare",
+    "team": {
+      "name": "Support Team",
+      "icon": "Users",
       "options": [
-        "Ticket",
-        "Email",
-        "Chat",
-        "Internal Note"
+        "Tier 1 Support",
+        "Tier 2 Support",
+        "Tier 3 Support",
+        "DevOps",
+        "Security Ops"
       ]
     },
-    "category": {
-      "name": "Category",
-      "icon": "Tag",
+    "tools": {
+      "name": "Tools",
+      "icon": "Tool",
       "options": [
-        "Support",
-        "Feature Request",
-        "Bug",
-        "Documentation",
-        "Enhancement"
-      ]
-    },
-    "priority": {
-      "name": "Priority",
-      "icon": "AlertTriangle",
-      "options": [
-        "High",
-        "Medium",
-        "Low",
-        "Critical"
-      ]
-    },
-    "status": {
-      "name": "Status",
-      "icon": "Activity",
-      "options": [
-        "In Progress",
-        "Completed",
-        "Failed",
-        "Pending",
-        "On Hold"
-      ]
-    },
-    "apps": {
-      "name": "Apps",
-      "icon": "AppWindow",
-      "options": [
-        "JIRA",
+        "Jira",
+        "ServiceNow",
         "Slack",
-        "BigQuery",
-        "Datadog",
-        "Grafana",
-        "Looker",
-        "Excel",
-        "VS Code",
-        "GPT-4"
+        "PagerDuty",
+        "Zendesk",
+        "GitHub",
+        "Jenkins"
       ]
     },
-    "tags": {
-      "name": "Tags",
-      "icon": "Hash",
+    "costImpact": {
+      "name": "Cost Impact",
+      "icon": "DollarSign",
       "options": [
-        "Automation",
-        "Manual Process",
-        "Data Analysis",
-        "Customer Facing",
-        "Internal",
-        "Technical",
-        "Business",
-        "Urgent",
-        "Scheduled"
+        "High (>$1000)",
+        "Medium ($100-$1000)",
+        "Low (<$100)"
+      ]
+    },
+    "automationStatus": {
+      "name": "Automation Status",
+      "icon": "Zap",
+      "options": [
+        "Fully Automated",
+        "Partially Automated",
+        "Manual",
+        "AI-Assisted"
+      ]
+    },
+    "processCompliance": {
+      "name": "Process Compliance",
+      "icon": "CheckCircle",
+      "options": [
+        "Compliant",
+        "Minor Deviations",
+        "Major Deviations",
+        "Non-Compliant"
       ]
     }
   },
   "defaults": {
-    "time_range": "Last 30 days"
+    "timeRange": "Last 30 days",
+    "team": "All Teams",
+    "tools": "All Tools",
+    "costImpact": "All",
+    "automationStatus": "All",
+    "processCompliance": "All"
   },
   "dynamic_filters": {
     "task": {
       "name": "Task",
-      "icon": "ClipboardList"
+      "icon": "ClipboardList",
+      "type": "search",
+      "placeholder": "Search tasks..."
     },
-    "search": {
-      "name": "Search",
-      "icon": "Search",
-      "type": "text",
-      "placeholder": "Search tasks, workflows..."
+    "workflow": {
+      "name": "Workflow",
+      "icon": "GitBranch",
+      "type": "search",
+      "placeholder": "Search workflows..."
     }
   }
 } 

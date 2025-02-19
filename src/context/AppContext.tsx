@@ -35,16 +35,13 @@ interface APITask {
 
 interface Task {
   id: string;
-  taskId: string;
   name: string;
-  totalTimeSpent: number;
-  opsCost: number;
-  automationScore: number;
-  blunderTime: number;
-  blunderCost: number;
-  tags: string[];
-  apps: string[];
-  automation_breakdown: AutomationBreakdown;
+  team: string;
+  costPerTicket: number;
+  aiSavings: number;
+  resolutionTime: string;
+  impact: number;
+  isBottleneck?: boolean;
 }
 
 interface APIWorkflow {
@@ -174,16 +171,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const mapAPITaskToTask = (apiTask: APITask): Task => ({
     id: apiTask._id,
-    taskId: apiTask["Task ID"],
     name: apiTask["Task Name"],
-    totalTimeSpent: parseFloat(apiTask["Total Time Spent (h)"]),
-    opsCost: parseFloat(apiTask["Ops Cost ($)"]),
-    automationScore: parseFloat(apiTask["Automation Score (%)"]),
-    blunderTime: parseFloat(apiTask["Blunder Time (h)"]),
-    blunderCost: parseFloat(apiTask["Blunder Cost ($)"]),
-    tags: apiTask.tags,
-    apps: apiTask.apps,
-    automation_breakdown: apiTask.automation_breakdown
+    team: '', // Assuming team is not available in the API response
+    costPerTicket: parseFloat(apiTask["Ops Cost ($)"]),
+    aiSavings: 0, // Assuming aiSavings is not available in the API response
+    resolutionTime: apiTask["Total Time Spent (h)"],
+    impact: 0, // Assuming impact is not available in the API response
   });
 
   const mapAPIWorkflowToWorkflow = (apiWorkflow: APIWorkflow): Workflow => ({
@@ -244,44 +237,51 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   });
 
   useEffect(() => {
-    const loadData = () => {
-      setLoading(true);
-      setError(null);
-      
+    const fetchData = async () => {
       try {
-        // Load and map tasks
-        const mappedTasks = tasksData.tasks.map(mapAPITaskToTask);
-        setTasks(mappedTasks);
-        console.log('Loaded tasks:', mappedTasks);
+        // Simulating API call with mock data
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        const mockTasks: Task[] = [
+          {
+            id: '1',
+            name: 'Customer Support',
+            team: 'Support',
+            costPerTicket: 89,
+            aiSavings: 34,
+            resolutionTime: '2h 15m',
+            impact: -15
+          },
+          {
+            id: '2',
+            name: 'Technical Support',
+            team: 'Engineering',
+            costPerTicket: 156,
+            aiSavings: 42,
+            resolutionTime: '4h 30m',
+            impact: 25,
+            isBottleneck: true
+          },
+          {
+            id: '3',
+            name: 'Billing Support',
+            team: 'Finance',
+            costPerTicket: 67,
+            aiSavings: 28,
+            resolutionTime: '1h 45m',
+            impact: -8
+          }
+        ];
 
-        // Load and map workflows
-        const mappedWorkflows = workflowsData.workflows.map(mapAPIWorkflowToWorkflow);
-        setWorkflows(mappedWorkflows);
-        console.log('Loaded workflows:', mappedWorkflows);
-
-        // Load and map sessions
-        const mappedSessions = sessionsData.sessions.map(mapAPISessionToSession);
-        setSessions(mappedSessions);
-        console.log('Loaded sessions:', mappedSessions);
-
-        // Load and map steps
-        const mappedSteps = stepsData.steps.map(mapAPIStepToStep);
-        setSteps(mappedSteps);
-        console.log('Loaded steps:', mappedSteps);
-
-        // Load and map actions
-        const mappedActions = actionsData.actions.map(mapAPIActionToAction);
-        setActions(mappedActions);
-        console.log('Loaded actions:', mappedActions);
+        setTasks(mockTasks);
+        setLoading(false);
       } catch (err) {
-        console.error('Error loading data:', err);
-        setError(err instanceof Error ? err.message : 'Failed to load data');
-      } finally {
+        setError(err instanceof Error ? err.message : 'An error occurred while fetching data');
         setLoading(false);
       }
     };
 
-    loadData();
+    fetchData();
   }, []);
 
   return (
