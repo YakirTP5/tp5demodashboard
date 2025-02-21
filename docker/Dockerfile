@@ -11,7 +11,7 @@ WORKDIR /app
 ENV APP_DIR=/app
 
 # Clone the repository (initial clone)
-RUN git clone https://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@github.com/YakirTP5/tp5demodashboard.git .
+RUN git clone https://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@github.com/YakirTP5/tp5demodashboard.git .
 
 # Install dependencies
 RUN npm ci --legacy-peer-deps
