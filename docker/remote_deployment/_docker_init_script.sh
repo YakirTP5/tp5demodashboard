@@ -41,6 +41,7 @@ copy_docker_files() {
     echo "Copying Docker files to the target machine..."
     scp -i "$SSH_KEY_PATH" -r "${LOCAL_DOCKER_FILES_DIR}/Dockerfile" "$SSH_USER@$SSH_HOST:$REMOTE_PROJECT_DIR/"
     scp -i "$SSH_KEY_PATH" -r "${LOCAL_DOCKER_FILES_DIR}/entrypoint.sh" "$SSH_USER@$SSH_HOST:$REMOTE_PROJECT_DIR/"
+    scp -i "$SSH_KEY_PATH" -r "${LOCAL_DOCKER_FILES_DIR}/secret.sh" "$SSH_USER@$SSH_HOST:$REMOTE_PROJECT_DIR/"
     scp -i "$SSH_KEY_PATH" -r "${SCRIPT_DIR}/build_docker_image.sh" "$SSH_USER@$SSH_HOST:$REMOTE_PROJECT_DIR/"
     scp -i "$SSH_KEY_PATH" -r "${SCRIPT_DIR}/restart_container.sh" "$SSH_USER@$SSH_HOST:$REMOTE_PROJECT_DIR/"
     scp -i "$SSH_KEY_PATH" -r "${SCRIPT_DIR}/show_container_logs.sh" "$SSH_USER@$SSH_HOST:$REMOTE_PROJECT_DIR/"
@@ -58,7 +59,7 @@ set_permissions() {
 # Function to execute deployment scripts on the target machine
 execute_scripts() {
     echo "Building Docker image on the target machine..."
-    ssh -i "$SSH_KEY_PATH" "$SSH_USER@$SSH_HOST" "cd $REMOTE_PROJECT_DIR && ./build_docker_image.sh"
+    ssh -i "$SSH_KEY_PATH" "$SSH_USER@$SSH_HOST" "cd $REMOTE_PROJECT_DIR && source secret.sh && ./build_docker_image.sh"
 
     echo "Initializing Docker container on the target machine..."
     ssh -i "$SSH_KEY_PATH" "$SSH_USER@$SSH_HOST" "cd $REMOTE_PROJECT_DIR && ./restart_container.sh"

@@ -10,8 +10,12 @@ WORKDIR /app
 # Set environment variable for app directory
 ENV APP_DIR=/app
 
-# Clone the repository (initial clone)
-RUN git clone https://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@github.com/YakirTP5/tp5demodashboard.git .
+# Accept build argument and set it as environment variable
+ARG GITHUB_ACCESS_TOKEN
+ENV GITHUB_ACCESS_TOKEN=$GITHUB_ACCESS_TOKEN
+
+# Clone the repository (initial clone) using the token
+RUN git clone https://${GITHUB_ACCESS_TOKEN}@github.com/YakirTP5/tp5demodashboard.git .
 
 # Install dependencies
 RUN npm ci --legacy-peer-deps

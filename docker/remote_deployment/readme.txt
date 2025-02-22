@@ -1,3 +1,5 @@
+Create "docker/secret.sh" file with all the secret tokens
+
 Use "_dockerInitScript.sh" script to set up Dockerized app on a remote dedicated instance
 
 

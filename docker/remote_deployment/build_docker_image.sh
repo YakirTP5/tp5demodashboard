@@ -58,6 +58,9 @@ check_and_install_docker
 check_docker_running
 
 cd "$REMOTE_PROJECT_DIR"
-docker build -t "$DOCKER_IMAGE_NAME" -f Dockerfile .
+docker build \
+    --build-arg GITHUB_ACCESS_TOKEN="$GITHUB_ACCESS_TOKEN" \
+    -t "$DOCKER_IMAGE_NAME" \
+    -f Dockerfile .
 
 echo "Docker image '$DOCKER_IMAGE_NAME' built successfully." 
